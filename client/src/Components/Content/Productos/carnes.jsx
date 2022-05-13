@@ -16,7 +16,6 @@ import { SimpleGrid } from '@mantine/core';
 function Democarta(){
     const [cuenta, setCuenta] = React.useState(0);
     console.log(cuenta)
-    
 
     return(
         <div style={{width:1200,margin:'auto'}}>
