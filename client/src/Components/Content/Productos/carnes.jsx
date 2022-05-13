@@ -53,7 +53,7 @@ function Democarta(){
                             <button className='boton_menos'>-</button>
                         </div>
                         <div className='boton_derecha'>
-                            <button className='boton_mas' onClick={()=>setCuenta(cuenta+=1)}>+</button>
+                            <button className='boton_mas' onClick={()=>setCuenta(prev => {prev + 1})}>+</button>
                         </div>
                         <div className='cuenta'>
                             <p className='dato'>{cuenta}</p>
@@ -82,7 +82,7 @@ function Democarta(){
                             <button className='boton_menos'>-</button>
                         </div>
                         <div className='boton_derecha'>
-                            <button className='boton_mas' onClick={()=>setCuenta(cuenta+=1)}>+</button>
+                            <button className='boton_mas' onClick={()=>setCuenta(prev => {prev + 1})}>+</button>
                         </div>
                         <div className='cuenta'>
                             <p className='dato'>{cuenta}</p>
@@ -111,7 +111,7 @@ function Democarta(){
                             <button className='boton_menos'>-</button>
                         </div>
                         <div className='boton_derecha'>
-                            <button className='boton_mas' onClick={()=>setCuenta(cuenta+=1)}>+</button>
+                            <button className='boton_mas' onClick={()=>setCuenta(prev => {prev + 1})}>+</button>
                         </div>
                         <div className='cuenta'>
                             <p className='dato'>{cuenta}</p>
@@ -140,7 +140,7 @@ function Democarta(){
                             <button className='boton_menos'>-</button>
                         </div>
                         <div className='boton_derecha'>
-                            <button className='boton_mas' onClick={()=>setCuenta(cuenta+=1)}>+</button>
+                            <button className='boton_mas' onClick={()=>setCuenta(prev => {prev + 1})}>+</button>
                         </div>
                         <div className='cuenta'>
                             <p className='dato'>{cuenta}</p>
@@ -169,7 +169,7 @@ function Democarta(){
                             <button className='boton_menos'>-</button>
                         </div>
                         <div className='boton_derecha'>
-                            <button className='boton_mas' onClick={()=>setCuenta(cuenta+=1)}>+</button>
+                            <button className='boton_mas' onClick={()=>setCuenta(prev => {prev + 1})}>+</button>
                         </div>
                         <div className='cuenta'>
                             <p className='dato'>{cuenta}</p>
@@ -198,7 +198,7 @@ function Democarta(){
                             <button className='boton_menos'>-</button>
                         </div>
                         <div className='boton_derecha'>
-                            <button className='boton_mas' onClick={()=>setCuenta(cuenta+=1)}>+</button>
+                            <button className='boton_mas' onClick={()=>setCuenta(prev => {prev + 1})}>+</button>
                         </div>
                         <div className='cuenta'>
                             <p className='dato'>{cuenta}</p>
@@ -227,7 +227,7 @@ function Democarta(){
                             <button className='boton_menos'>-</button>
                         </div>
                         <div className='boton_derecha'>
-                            <button className='boton_mas' onClick={()=>setCuenta(cuenta+=1)}>+</button>
+                            <button className='boton_mas' onClick={()=>setCuenta(prev => {prev + 1})}>+</button>
                         </div>
                         <div className='cuenta'>
                             <p className='dato'>{cuenta}</p>
@@ -256,7 +256,7 @@ function Democarta(){
                             <button className='boton_menos'>-</button>
                         </div>
                         <div className='boton_derecha'>
-                            <button className='boton_mas' onClick={()=>setCuenta(cuenta+=1)}>+</button>
+                            <button className='boton_mas' onClick={()=>setCuenta(prev => {prev + 1})}>+</button>
                         </div>
                         <div className='cuenta'>
                             <p className='dato'>{cuenta}</p>
