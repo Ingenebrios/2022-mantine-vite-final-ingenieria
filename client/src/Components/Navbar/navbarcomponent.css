@@ -1,0 +1,19 @@
+.pelota {
+	height: 70px;
+	width: 100%;
+	/* background-color: orange; */
+	border: 1px solid orange;
+	border-radius: 5px;
+}
+
+.infor__recomendacion__individual {
+	margin-top: 10px;
+}
+
+.imagen_prueba {
+	position: relative;
+}
+
+.ofertas__activas__texto {
+	margin-top: 10px;
+}
