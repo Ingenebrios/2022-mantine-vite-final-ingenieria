@@ -34,12 +34,12 @@ function ContentComponent() {
 
 
 					<Productos producto={supermercado} categoria={categoria} />
-					<Democarta/>
+					<Democarta />
 
 
 
 				</Tabs.Tab>
-				<Tabs.Tab label="Settings" >Settings tab content</Tabs.Tab>
+				<Tabs.Tab label="Checkout" >Settings tab content</Tabs.Tab>
 			</Tabs>
 		</div>
 	)
