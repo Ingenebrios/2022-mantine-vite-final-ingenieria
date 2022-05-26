@@ -12,9 +12,10 @@ import Sal7 from "./img_carnes/img7.svg"
 import Sal8 from "./img_carnes/img8.svg"
 import './producto.css'
 import { SimpleGrid } from '@mantine/core';
-import { MultiSelect, Card, Image, Text, Badge, Button, Group, Slider } from '@mantine/core';
+import { showNotification } from '@mantine/notifications';
+import { MultiSelect, Card, Image, Text, Badge, Button, Group, Slider, Divider, Stepper } from '@mantine/core';
 
-function Democarta() {
+function Democarta({ setItems }) {
     // const [cuenta, setCuenta] = React.useState(0);
     // console.log(cuenta)
 
@@ -24,6 +25,10 @@ function Democarta() {
             { value: 'salchicha-de-res', label: 'Salchica de res', src: Sal2, unidades: 20, precio: 16.00, articulosllevar: 0 },
             { value: 'salchicha-de-cocktail', label: 'Salchica Cocktail', src: Sal3, unidades: 30, precio: 26.50, articulosllevar: 0 },
             { value: 'salchicha-de-gigante', label: 'Salchica Gigante', src: Sal4, unidades: 12, precio: 14.90, articulosllevar: 0 },
+            { value: 'salchicha-de-hotdog', label: 'Salchica de Hotdog', src: Sal5, unidades: 5, precio: 29.50, articulosllevar: 0 },
+            { value: 'bistec-especial', label: 'Bistec Especial', src: Sal6, unidades: 20, precio: 38.60, articulosllevar: 0 },
+            { value: 'bistec-economico', label: 'Bistec Economico', src: Sal7, unidades: 50, precio: 26.50, articulosllevar: 0 },
+            { value: 'arrachera-original', label: 'Arrachera Original', src: Sal8, unidades: 17, precio: 143.90, articulosllevar: 0 },
         ]
     );
 
@@ -46,10 +51,22 @@ function Democarta() {
     return (
 
         <div>
+            <Stepper active={2} color="yellow" size="md" breakpoint="sm" style={{ marginRight: '45px' }}>
+                <Stepper.Step label="Primer paso" description="Elegir supermercado">
+                </Stepper.Step>
+                <Stepper.Step label="Segundo paso" description="Agregar productos">
+                </Stepper.Step>
+                <Stepper.Step label="Tercer paso" description="Confirmar compra">
+                </Stepper.Step>
+                <Stepper.Completed>
+                </Stepper.Completed>
+            </Stepper>
+
+            <Divider my="sm" />
 
             <MultiSelect
                 data={propiedades}
-                label="Porfvor elija los productos que desea agregar"
+                label="Porfavor elija los productos que desea agregar"
                 placeholder="Elije tus productos"
                 clearButtonLabel="Limpiar"
                 clearable
@@ -63,7 +80,8 @@ function Democarta() {
                         for (let i = 0; i < propiedades.length; i++) {
                             if (elemento === propiedades[i].value) {
                                 return (
-                                    <Card key={propiedades[i].value} shadow="sm" p="lg" style={{ marginTop: '15px', maxWidth: '300px', minWidth: '300px' }}>
+                                    <Card key={propiedades[i].value} shadow="sm" p="lg"
+                                        style={{ marginTop: '15px', maxWidth: '260px', minWidth: '260px', maxHeight: '300px' }}>
                                         <Card.Section>
                                             <Image src={propiedades[i].src} height={160} alt="Norway" />
                                         </Card.Section>
@@ -95,8 +113,28 @@ function Democarta() {
                 }
             </div>
 
-            <Button color='orange' onClick={() => console.log(propiedades)}>Aplicar cambios</Button>
+            <div className="area_boton_aplicar">
 
+                <Button
+                    color='orange'
+                    onClick={() => {
+                        setItems(propiedades)
+                        propiedades.map(item => {
+
+                            if (item.articulosllevar > 0) {
+                                console.log(item);
+                                return (
+                                    showNotification({
+                                        title: 'Default notification',
+                                        message: 'Hey there, your code is awesome! 🤥',
+                                    })
+                                )
+                            }
+                        })
+                    }}
+                >Agregar a carrito</Button>
+
+            </div>
 
         </div>
 

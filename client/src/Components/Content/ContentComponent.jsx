@@ -11,17 +11,20 @@ import { Photo, MessageCircle, Settings } from 'tabler-icons-react'
 
 import Supermercados from './Supermercados/Supermercados.jsx'
 
-import Productos from './Productos/Productos.jsx'
-
 import Democarta from './Productos/carnes.jsx';
+
+import Checkout from './Checkout/Checkout.jsx'
 
 function ContentComponent() {
 
 	const [supermercado, setSupermercado] = useState();
 	const [categoria, setcategoria] = useState([]);
 
+	const [items, setItems] = useState([]);
+
 	return (
 		<div className="content__container">
+
 			<Tabs grow position="apart" variant="outline">
 				<Tabs.Tab label="Supermercados" >
 
@@ -32,14 +35,15 @@ function ContentComponent() {
 				</Tabs.Tab>
 				<Tabs.Tab label="Productos" >
 
-
-					<Productos producto={supermercado} categoria={categoria} />
-					<Democarta />
-
+					<Democarta setItems={setItems} />
 
 
 				</Tabs.Tab>
-				<Tabs.Tab label="Checkout" >Settings tab content</Tabs.Tab>
+				<Tabs.Tab label="Checkout" >
+
+					<Checkout items={items} />
+
+				</Tabs.Tab>
 			</Tabs>
 		</div>
 	)

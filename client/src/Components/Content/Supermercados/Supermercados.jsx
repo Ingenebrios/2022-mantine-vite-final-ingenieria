@@ -4,6 +4,8 @@ import { Badge } from '@mantine/core';
 import { LetterX } from 'tabler-icons-react';
 import './Supermercados.css'
 
+import { Divider, Stepper, Button, Group } from '@mantine/core'
+
 import carnes from '../../../assets/supermercados/carnes.png'
 import frutas from '../../../assets/supermercados/Frutas.png'
 import panaderia from '../../../assets/supermercados/Panaderia.png'
@@ -44,6 +46,20 @@ const Supermercados = ({ supermercado, setSupermercado, setCategoria, categoria 
 
 	return (
 		<div className="SupermercadoContainer">
+
+			<Stepper active={1} color="yellow" size="md" breakpoint="sm" style={{ marginRight: '45px' }}>
+				<Stepper.Step label="Primer paso" description="Elegir supermercado">
+				</Stepper.Step>
+				<Stepper.Step label="Segundo paso" description="Agregar productos">
+				</Stepper.Step>
+				<Stepper.Step label="Tercer paso" description="Confirmar compra">
+				</Stepper.Step>
+				<Stepper.Completed>
+				</Stepper.Completed>
+			</Stepper>
+
+			<Divider my="sm" />
+
 			<Autocomplete
 				value={supermercado} onChange={setSupermercado}
 				label="Seleccione el supermercado de su eleccion."
@@ -54,33 +70,33 @@ const Supermercados = ({ supermercado, setSupermercado, setCategoria, categoria 
 			{
 				categoriaUnica.map(badge => {
 					return (
-							<Badge className="badge">
-								{badge}
-								<LetterX
-									size={15}
-									strokeWidth={2}
-									color={'black'}
-									className="letterX"
-									onClick={console.log("click2")}
-								/>
-							</Badge>
+						<Badge className="badge">
+							{badge}
+							<LetterX
+								size={15}
+								strokeWidth={2}
+								color={'black'}
+								className="letterX"
+								onClick={console.log("click2")}
+							/>
+						</Badge>
 					);
 				})
 			}
 			<div className="supermercado">
-            <div className="inferior">
-                <div className="gridImagenes">
-                    {imagenes.map(imagen => {
-                        return (
-                            <div key={imagen.id}>
-                                <img alt={imagen.id} onClick={() =>setCategoria(setCategoria=>[...setCategoria, imagen.id])} className="imagen" src={imagen.src}></img>
-                                <h3 id="tituloImg">{imagen.id}</h3>
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
-        </div>
+				<div className="inferior">
+					<div className="gridImagenes">
+						{imagenes.map(imagen => {
+							return (
+								<div key={imagen.id}>
+									<img alt={imagen.id} onClick={() => setCategoria(setCategoria => [...setCategoria, imagen.id])} className="imagen" src={imagen.src}></img>
+									<h3 id="tituloImg">{imagen.id}</h3>
+								</div>
+							)
+						})}
+					</div>
+				</div>
+			</div>
 		</div>
 	)
 }

@@ -29,6 +29,19 @@ const Login = ({ setUsuarioLoggeado, setcorreoUsuarioLoggeado }) => {
 		catch (error) {
 			console.log(error)
 		}
+
+
+
+
+		// ELIMINAR ESTO UNA VEZ SE TERMINEN LOS TEST
+
+		setUsuarioLoggeado(true);
+
+
+
+
+
+
 	}
 
 
