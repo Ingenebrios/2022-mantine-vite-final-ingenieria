@@ -44,7 +44,7 @@ const HeaderComponent = ({ setOpened, opened, user }) => {
 							<Divider />
 
 							<Menu.Label>Cuenta</Menu.Label>
-							<Menu.Item color="red" icon={<UserMinus size={14} />}>Cerrar sesion</Menu.Item>
+							<Menu.Item color="red" icon={<UserMinus size={14} />} onClick={() => { window.location.reload(false); }}>Cerrar sesion</Menu.Item>
 						</Menu>
 					</div>
 				</div>
