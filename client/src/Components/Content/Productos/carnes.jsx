@@ -122,7 +122,7 @@ function Democarta({ setItems }) {
                         propiedades.map(item => {
 
                             if (item.articulosllevar > 0) {
-                                console.log(item);
+                                // console.log(item);
                                 return (
                                     showNotification({
                                         title: 'Default notification',
