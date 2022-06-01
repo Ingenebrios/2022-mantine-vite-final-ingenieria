@@ -22,10 +22,12 @@ function ContentComponent() {
 
 	const [items, setItems] = useState([]);
 
+	const [activeTab, setActiveTab] = useState(0);
+
 	return (
 		<div className="content__container">
 
-			<Tabs grow position="apart" variant="outline">
+			<Tabs grow position="apart" variant="outline" active={activeTab} onTabChange={setActiveTab}>
 				<Tabs.Tab label="Supermercados" >
 
 
@@ -41,7 +43,7 @@ function ContentComponent() {
 				</Tabs.Tab>
 				<Tabs.Tab label="Checkout" >
 
-					<Checkout items={items} />
+					<Checkout items={items} setActiveTab={setActiveTab} />
 
 				</Tabs.Tab>
 			</Tabs>

@@ -7,7 +7,7 @@ import loc1 from './locations/loc1.png'
 
 import './checkout.css'
 
-const Checkout = ({ items }) => {
+const Checkout = ({ items, setActiveTab }) => {
 
 	const [totalCompra, settotalCompra] = useState(0);
 
@@ -245,6 +245,9 @@ const Checkout = ({ items }) => {
 							<Button
 								leftIcon={<CurrencyDollar size={18} />}
 								color="orange"
+								onClick={() => {
+									setActiveTab(0)
+								}}
 							>
 								Realizar compra
 							</Button>
