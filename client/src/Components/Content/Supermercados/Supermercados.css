@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+
 .SupermercadoContainer {
   /* position: absolute; */
   left: 425px;
@@ -23,6 +25,7 @@
 
 .AutoSupermercado {
   width: 100%;
+  font-family: 'Overpass', sans-serif;
 }
 
 .supermercado {
@@ -76,9 +79,9 @@
   position: relative;
   margin-top: 5px;
   color: #7D7D7D;
-  font-family: roboto;
+  font-family: 'Overpass', sans-serif;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px; /*Original 16px*/
   left: 6px;
 }
 
@@ -93,5 +96,5 @@
   margin-top: 20px;
   margin-right: 10px;
   height: 40px;
-  font-size: 13px;
+  font-size: 15px; /*Original 13px*/
 }

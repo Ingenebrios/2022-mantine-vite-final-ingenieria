@@ -72,9 +72,9 @@ const Historial = ({ id }) => {
 					return (
 						<Notification color="indigo" title={record.supermercado} disallowClose key={record.id} className="mensaje__individual">
 							{record.informacion}
-							<Divider my="sm" variant="dashed" />
-							<Badge color="teal">{record.costo + "$"}</Badge>
-							<Badge color="lime">Reordenar</Badge>
+							<Divider my="md" variant="dashed" />
+							<Badge color="teal" style={{ marginTop: 14, fontFamily:'Overpass, sans-serif'}} size="lg">{record.costo + "$"}</Badge>
+							<Badge color="lime" style={{ marginTop: 14, fontFamily:'Overpass, sans-serif'}} size="lg">Reordenar</Badge>
 						</Notification>
 					)
 				})
