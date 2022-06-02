@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
 .pelota {
 	height: 70px;
 	width: 100%;
@@ -16,4 +17,6 @@
 
 .ofertas__activas__texto {
 	margin-top: 10px;
+	font-family: 'Overpass', sans-serif;
+	font-size: 20px;
 }

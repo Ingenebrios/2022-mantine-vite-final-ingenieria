@@ -1,4 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+/*@import url(https://fonts.googleapis.com/css?family=Roboto:300);*/
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
 
 .login-page {
 	width: 360px;
@@ -18,7 +19,7 @@
 }
 
 .form input {
-	font-family: "Roboto", sans-serif;
+	font-family: 'Overpass', sans-serif;
 	outline: 0;
 	background: #f2f2f2;
 	width: 100%;
@@ -26,11 +27,11 @@
 	margin: 0 0 15px;
 	padding: 15px;
 	box-sizing: border-box;
-	font-size: 14px;
+	font-size: 16px; /*Tamaño original: 14px*/
 }
 
 .form button {
-	font-family: "Roboto", sans-serif;
+	font-family: 'Overpass', sans-serif;
 	text-transform: uppercase;
 	outline: 0;
 	background: #fb8500;
@@ -38,7 +39,7 @@
 	border: 0;
 	padding: 15px;
 	color: #FFFFFF;
-	font-size: 14px;
+	font-size: 16px; /*Tamaño orignal: 14px*/
 	-webkit-transition: all 0.3 ease;
 	transition: all 0.3 ease;
 	cursor: pointer;
@@ -53,16 +54,18 @@
 .form .message {
 	margin: 15px 0 0;
 	color: #b3b3b3;
-	font-size: 12px;
+	font-size: 16px; /*Tamaño original: 12px*/
 }
 
 .form .message a {
 	color: #fb8500;
 	text-decoration: none;
+	font-size: 16px; /*Tamaño original: 12px*/
 }
 
 .form .register-form {
 	/* display: none; */
+	font-family: 'Overpass', sans-serif;
 }
 
 .container {
@@ -94,7 +97,7 @@
 
 .container .info span {
 	color: #4d4d4d;
-	font-size: 12px;
+	font-size: 12px; /*Tamaño original: 12px*/
 }
 
 .container .info span a {
@@ -111,7 +114,7 @@ body {
 	/* fallback for old browsers */
 	/* background: rgb(141, 194, 111); */
 	/* background: linear-gradient(90deg, #ffad4f 0%, #ffb703 50%); */
-	font-family: "Roboto", sans-serif;
+	font-family: 'Overpass', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }

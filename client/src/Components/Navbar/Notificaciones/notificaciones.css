@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap');
+
 .paper__notificacion__individual {
 	margin-bottom: 1rem;
+	font-family: 'Overpass', sans-serif;
+	font-size: 20px;
 }
 
 .icono__notificacion {
@@ -13,6 +17,7 @@
 	/* background-color: red; */
 	display: flex;
 	justify-content: center;
+	font-family: 'Overpass', sans-serif;
 }
 
 .area__especifica__superior__notificacion {
