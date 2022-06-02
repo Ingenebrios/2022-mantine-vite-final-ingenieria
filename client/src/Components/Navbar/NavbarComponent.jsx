@@ -42,7 +42,9 @@ const NavbarComponent = ({ opened, userID }) => {
 							<Group noWrap>
 								<BiBell />
 								<div>
-									<Text>Notificaciones</Text>
+									<Text 
+									size="xl"
+									style={{fontFamily:'Overpass, sans-serif'}}>Notificaciones</Text>
 								</div>
 							</Group>
 						}>
@@ -61,7 +63,9 @@ const NavbarComponent = ({ opened, userID }) => {
 							<Group noWrap>
 								<FaHistory />
 								<div>
-									<Text>Historial</Text>
+									<Text
+									size="xl"
+									style={{fontFamily:'Overpass, sans-serif'}}>Historial</Text>
 								</div>
 							</Group>
 						}>
@@ -75,7 +79,9 @@ const NavbarComponent = ({ opened, userID }) => {
 							<Group noWrap>
 								<RiMessage3Line />
 								<div>
-									<Text>Mensajes</Text>
+									<Text
+									size="xl"
+									style={{fontFamily:'Overpass, sans-serif'}}>Mensajes</Text>
 								</div>
 							</Group>
 						}>
@@ -94,6 +100,8 @@ const NavbarComponent = ({ opened, userID }) => {
 						align="center"
 						variant="gradient"
 						gradient={{ from: 'orange', to: 'yellow', deg: 45 }}
+						size="xl"
+						style={{fontFamily:'Overpass, sans-serif'}}
 					>Ofertas activas en Pedidotes</Text>
 
 
@@ -107,17 +115,17 @@ const NavbarComponent = ({ opened, userID }) => {
 							</Card.Section>
 
 							<Group position="apart" className='infor__recomendacion__individual' style={{ marginBottom: 5 }}>
-								<Text weight={500}>La Torre Free Delivery</Text>
-								<Badge color="pink" variant="light">
+								<Text weight={500} style={{fontFamily:'Overpass, sans-serif'}} size="lg">La Torre Free Delivery</Text>
+								<Badge color="pink" variant="light" size="lg" style={{fontFamily:'Overpass, sans-serif'}}>
 									13 Mayo
 								</Badge>
 							</Group>
 
-							<Text size="sm">
+							<Text size="md" style={{fontFamily:'Overpass, sans-serif'}}>
 								Ordena con La Torre hoy 13 de mayo en ordenes mayores a 50Q y recibe un 100% de descuento en tu envio.
 							</Text>
 
-							<Button variant="light" color="blue" fullWidth style={{ marginTop: 14 }}>
+							<Button variant="light" color="blue" fullWidth style={{ marginTop: 14, fontFamily:'Overpass, sans-serif'}} size="md">
 								Ordenar!
 							</Button>
 						</Card>
@@ -130,17 +138,17 @@ const NavbarComponent = ({ opened, userID }) => {
 							</Card.Section>
 
 							<Group position="apart" className='infor__recomendacion__individual' style={{ marginBottom: 5 }}>
-								<Text weight={500}>Walmart Ropa</Text>
-								<Badge color="pink" variant="light">
+								<Text weight={500} size="lg" style={{fontFamily:'Overpass, sans-serif'}}>Walmart Ropa</Text>
+								<Badge color="pink" variant="light" size="lg" style={{fontFamily:'Overpass, sans-serif'}}>
 									10 a 15 de MAYO
 								</Badge>
 							</Group>
 
-							<Text size="sm">
+							<Text size="md" style={{fontFamily:'Overpass, sans-serif'}}>
 								Toda la ropa tiene un descuento empezando desde el 30% para arriba durante esta semana!
 							</Text>
 
-							<Button variant="light" color="blue" fullWidth style={{ marginTop: 14 }}>
+							<Button variant="light" color="blue" fullWidth style={{ marginTop: 14, fontFamily:'Overpass, sans-serif'}} size="md">
 								Ver ropa!
 							</Button>
 						</Card>
@@ -156,11 +164,11 @@ const NavbarComponent = ({ opened, userID }) => {
 								<Text weight={500}>Pedidotes Coupons</Text>
 							</Group>
 
-							<Text size="sm">
+							<Text size="md" style={{fontFamily:'Overpass, sans-serif'}}>
 								Recibe un 5% de reembolso en todas tus compras en linea que hagas con nosotros arriba de un rango de 200Q! Estos cupones pueden ser utilizados en tus siguientes compras.
 							</Text>
 
-							<Button variant="light" color="blue" fullWidth style={{ marginTop: 14 }}>
+							<Button variant="light" color="blue" fullWidth style={{ marginTop: 14, fontFamily:'Overpass, sans-serif'}} size="md">
 								Mas info.
 							</Button>
 						</Card>

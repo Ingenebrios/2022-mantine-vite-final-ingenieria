@@ -47,7 +47,7 @@ const Supermercados = ({ supermercado, setSupermercado, setCategoria, categoria 
 	return (
 		<div className="SupermercadoContainer">
 
-			<Stepper active={1} color="yellow" size="md" breakpoint="sm" style={{ marginRight: '45px' }}>
+			<Stepper active={1} color="yellow" size="lg" breakpoint="sm" style={{ marginRight: '45px', fontFamily:'Overpass, sans-serif'}}>
 				<Stepper.Step label="Primer paso" description="Elegir supermercado">
 				</Stepper.Step>
 				<Stepper.Step label="Segundo paso" description="Agregar productos">
