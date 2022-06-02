@@ -31,8 +31,8 @@
 }
 
 .nombre__avatar__aplicacion {
-	font-family: 'Roboto';
-	font-size: 16px;
+	font-family: 'Overpass', sans-serif;
+	font-size: 18px; /*Origianl 16px*/
 	font-weight: 400;
 	position: relative;
 	top: 1px;

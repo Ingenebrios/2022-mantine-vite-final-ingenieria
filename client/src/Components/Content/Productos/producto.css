@@ -1,0 +1,16 @@
+.seccion_cartas {
+    width: 100%;
+    /* background-color: red; */
+    display: grid;
+    /* gap: 1rem; */
+    grid-template-columns: auto auto auto auto;
+    place-items: center;
+}
+
+.area_boton_aplicar {
+    height: 100px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

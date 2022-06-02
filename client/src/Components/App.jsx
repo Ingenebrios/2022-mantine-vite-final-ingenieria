@@ -4,6 +4,25 @@ import { collection, getDocs } from 'firebase/firestore'
 
 import { db } from '../config/firebase-config'
 
+
+
+
+
+import { auth } from '../config/firebase-config-auth'
+import { signOut } from 'firebase/auth'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+
+import Login from './LoginRegister/Login'
+
+
+
+
+
+
+
+
+
+
 import {
   AppShell
 } from '@mantine/core';
@@ -22,6 +41,13 @@ function App() {
 
   const [usuario, setUsuario] = useState({});
 
+
+  const [usuarioLoggeado, setUsuarioLoggeado] = useState(false);
+
+  const [correoUsuarioLoggeado, setcorreoUsuarioLoggeado] = useState('');
+
+
+
   useEffect(() => {
     const referenciaUsuarios = collection(db, 'usuarios')
     const reatrerUsuarios = async () => {
@@ -39,25 +65,33 @@ function App() {
     }
   }, [usuarios]);
 
-  // useEffect(() => {
-  //   console.log('Se ha elegido un nuevo usuario:', usuario)
-  // }, [usuario]);
+  useEffect(() => {
+    if (correoUsuarioLoggeado.length > 0) {
+      console.log('Se ha loggeado con el correo: ' + correoUsuarioLoggeado)
+    }
+  }, [correoUsuarioLoggeado]);
 
   return (
     <div className="App">
-      <AppShell
-        navbarOffsetBreakpoint="sm"
-        asideOffsetBreakpoint="sm"
-        fixed
-        navbar={
-          <NavbarComponent opened={opened} userID={usuario.id} />
-        }
-        header={
-          <HeaderComponent setOpened={setOpened} opened={opened} user={usuario} />
-        }
-      >
-        <ContentComponent />
-      </AppShell>
+      {
+        usuarioLoggeado
+          ?
+          <AppShell
+            navbarOffsetBreakpoint="sm"
+            asideOffsetBreakpoint="sm"
+            fixed
+            navbar={
+              <NavbarComponent opened={opened} userID={usuario.id} />
+            }
+            header={
+              <HeaderComponent setOpened={setOpened} opened={opened} user={usuario} />
+            }
+          >
+            <ContentComponent />
+          </AppShell>
+          :
+          <Login setUsuarioLoggeado={setUsuarioLoggeado} setcorreoUsuarioLoggeado={setcorreoUsuarioLoggeado} />
+      }
     </div>
   )
 }
