@@ -32,8 +32,19 @@
 
 .nombre__avatar__aplicacion {
 	font-family: 'Overpass', sans-serif;
-	font-size: 18px; /*Origianl 16px*/
+	font-size: 18px;
+	/*Origianl 16px*/
 	font-weight: 400;
 	position: relative;
 	top: 1px;
+}
+
+.area_nombre_apellido_queja {
+	display: flex;
+	flex-direction: row;
+	/* justify-content: space-between; */
+}
+
+.input_nombre_queja {
+	margin: 15px;
 }
