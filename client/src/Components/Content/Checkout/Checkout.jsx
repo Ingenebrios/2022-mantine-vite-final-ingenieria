@@ -116,7 +116,7 @@ const Checkout = ({ items, setActiveTab }) => {
 							<Divider my="sm" />
 
 							<div className='area_total_cupon'>
-								<Text>Total de su compra: Q{totalCompra}</Text>
+								<Text>Total de su compra: Q{parseFloat(totalCompra).toFixed(2)}</Text>
 								<Button color="yellow" onClick={() => setabrirModalCupon(true)}>
 									Aplicar cupon
 								</Button>
