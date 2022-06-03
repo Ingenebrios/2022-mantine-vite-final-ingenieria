@@ -135,3 +135,9 @@
 	grid-template-columns: auto auto auto;
 	place-items: center;
 }
+
+.area_total_cupon {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
