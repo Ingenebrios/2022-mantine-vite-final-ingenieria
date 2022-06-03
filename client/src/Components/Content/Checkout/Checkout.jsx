@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { Stepper, Divider, Text, Table, Button, Accordion, Badge, ThemeIcon, Card, Group, Image } from '@mantine/core';
+import { Stepper, Divider, Text, Table, Button, Accordion, Badge, ThemeIcon, Card, Group, Image, Modal, TextInput } from '@mantine/core';
 import { CurrencyDollar } from 'tabler-icons-react'
 import { CirclePlus } from 'tabler-icons-react';
 
+import { showNotification } from '@mantine/notifications';
+
+
 import loc1 from './locations/loc1.png'
+
+import imgcupon from './locations/imagencupon.svg'
 
 import './checkout.css'
 
 const Checkout = ({ items, setActiveTab }) => {
 
 	const [totalCompra, settotalCompra] = useState(0);
+
+	const [abrirModalCupon, setabrirModalCupon] = useState(false);
 
 	const filasTabla = items.map((item) => {
 		if (item.articulosllevar > 0) {
@@ -45,6 +52,37 @@ const Checkout = ({ items, setActiveTab }) => {
 
 	return (
 		<div>
+
+			<Modal
+				opened={abrirModalCupon}
+				onClose={() => setabrirModalCupon(false)}
+			>
+				<TextInput style={{ marginBottom: '15px' }}
+					placeholder="Ingresar nuevo cupon"
+					label="Numeracion del cupon"
+				/>
+				<div style={{ width: 240, marginLeft: 'auto', marginRight: 'auto', marginBottom: '15px' }}>
+					<Image
+						radius="md"
+						src={imgcupon}
+					/>
+				</div>
+				<div style={{ display: 'flex', justifyContent: 'center' }}>
+					<Button color="yellow" onClick={() => {
+						settotalCompra((prev) => prev * 0.95)
+						setabrirModalCupon(false)
+						showNotification({
+							title: 'Cupon aceptado',
+							message: 'Se le ha descontado un 5% a su compra!',
+						})
+					}}>
+						Aplicar cupon
+					</Button>
+				</div>
+
+
+			</Modal>
+
 			<Stepper active={3} color="yellow" size="md" breakpoint="sm" style={{ marginRight: '45px' }}>
 				<Stepper.Step label="Primer paso" description="Elegir supermercado">
 				</Stepper.Step>
@@ -77,7 +115,13 @@ const Checkout = ({ items, setActiveTab }) => {
 
 							<Divider my="sm" />
 
-							<Text>Total de su compra: Q{totalCompra}</Text>
+							<div className='area_total_cupon'>
+								<Text>Total de su compra: Q{totalCompra}</Text>
+								<Button color="yellow" onClick={() => setabrirModalCupon(true)}>
+									Aplicar cupon
+								</Button>
+							</div>
+
 
 							<Divider my="sm" />
 							<Accordion disableIconRotation icon={

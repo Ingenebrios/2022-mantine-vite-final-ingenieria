@@ -5,8 +5,10 @@ import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../config/firebase-config'
 
 
+import { NotificationsProvider } from '@mantine/notifications';
 
 
+import { MantineProvider } from '@mantine/core';
 
 import { auth } from '../config/firebase-config-auth'
 import { signOut } from 'firebase/auth'
@@ -72,27 +74,33 @@ function App() {
   }, [correoUsuarioLoggeado]);
 
   return (
-    <div className="App">
-      {
-        usuarioLoggeado
-          ?
-          <AppShell
-            navbarOffsetBreakpoint="sm"
-            asideOffsetBreakpoint="sm"
-            fixed
-            navbar={
-              <NavbarComponent opened={opened} userID={usuario.id} />
-            }
-            header={
-              <HeaderComponent setOpened={setOpened} opened={opened} user={usuario} />
-            }
-          >
-            <ContentComponent />
-          </AppShell>
-          :
-          <Login setUsuarioLoggeado={setUsuarioLoggeado} setcorreoUsuarioLoggeado={setcorreoUsuarioLoggeado} />
-      }
-    </div>
+
+    <MantineProvider>
+      <NotificationsProvider>
+        <div className="App">
+          {
+            usuarioLoggeado
+              ?
+              <AppShell
+                navbarOffsetBreakpoint="sm"
+                asideOffsetBreakpoint="sm"
+                fixed
+                navbar={
+                  <NavbarComponent opened={opened} userID={usuario.id} />
+                }
+                header={
+                  <HeaderComponent setOpened={setOpened} opened={opened} user={usuario} />
+                }
+              >
+                <ContentComponent />
+              </AppShell>
+              :
+              <Login setUsuarioLoggeado={setUsuarioLoggeado} setcorreoUsuarioLoggeado={setcorreoUsuarioLoggeado} />
+          }
+        </div>
+      </NotificationsProvider>
+    </MantineProvider>
+
   )
 }
 
