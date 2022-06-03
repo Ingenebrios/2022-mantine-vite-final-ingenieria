@@ -13,7 +13,7 @@ import Sal8 from "./img_carnes/img8.svg"
 import './producto.css'
 import { SimpleGrid } from '@mantine/core';
 import { showNotification } from '@mantine/notifications';
-import { MultiSelect, Card, Image, Text, Badge, Button, Group, Slider, Divider, Stepper } from '@mantine/core';
+import { MultiSelect, Card, Image, Text, Badge, Button, Group, Slider, Divider, Stepper, Autocomplete } from '@mantine/core';
 
 function Democarta({ setItems }) {
     // const [cuenta, setCuenta] = React.useState(0);
@@ -46,6 +46,20 @@ function Democarta({ setItems }) {
         let newArr = [...propiedades]
         newArr[indice].articulosllevar = e
         setpropiedades(newArr)
+    }
+
+    const handleBadgeClick = (elemento) => {
+
+        console.log(elemento)
+
+        const nuevaLista = [...productosElegidos]
+
+        nuevaLista.push(elemento.value)
+
+        // console.log(nuevaLista)
+
+        setProductosElegidos(nuevaLista)
+
     }
 
     return (
@@ -134,6 +148,44 @@ function Democarta({ setItems }) {
                     }}
                 >Agregar a carrito</Button>
 
+            </div>
+
+
+            <Divider my="sm" />
+
+            <div className="seccion_cartas">
+
+
+                {
+
+
+                    propiedades.map((elemento) => {
+
+                        if (!productosElegidos.includes(elemento.value)) {
+                            return (
+
+                                <Card key={elemento.label} shadow="sm" p="lg" style={{ maxWidth: '300px', maxHeight: '200px', margin: '15px' }}>
+                                    <Card.Section>
+                                        <Image src={elemento.src} height={160} alt="imagen" />
+                                    </Card.Section>
+
+                                    <Group position="apart" style={{ marginBottom: 5 }}>
+                                        <Text weight={500}>{elemento.label}</Text>
+                                        <Badge onClick={() => {
+                                            handleBadgeClick(elemento)
+                                        }} color="orange">
+                                            Incluir
+                                        </Badge>
+                                    </Group>
+                                </Card>
+
+                            )
+                        }
+
+
+                    })
+
+                }
             </div>
 
         </div>
