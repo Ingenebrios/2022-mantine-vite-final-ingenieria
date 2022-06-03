@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Autocomplete } from '@mantine/core';
 import { Badge } from '@mantine/core';
 import { LetterX } from 'tabler-icons-react';
@@ -36,7 +36,8 @@ const imagenes = [
 
 const Supermercados = ({ supermercado, setSupermercado, setCategoria, categoria }) => {
 
-	const categoriaUnica = []
+	// const categoriaUnica = []
+	const [categoriaUnica, setCategoriaUnica] = useState([]);
 
 	categoria.map(categoria => {
 		if (categoriaUnica.indexOf(categoria) === -1) {
@@ -47,7 +48,7 @@ const Supermercados = ({ supermercado, setSupermercado, setCategoria, categoria 
 	return (
 		<div className="SupermercadoContainer">
 
-			<Stepper active={1} color="yellow" size="lg" breakpoint="sm" style={{ marginRight: '45px', fontFamily:'Overpass, sans-serif'}}>
+			<Stepper active={1} color="yellow" size="lg" breakpoint="sm" style={{ marginRight: '45px', fontFamily: 'Overpass, sans-serif' }}>
 				<Stepper.Step label="Primer paso" description="Elegir supermercado">
 				</Stepper.Step>
 				<Stepper.Step label="Segundo paso" description="Agregar productos">
@@ -70,14 +71,50 @@ const Supermercados = ({ supermercado, setSupermercado, setCategoria, categoria 
 			{
 				categoriaUnica.map(badge => {
 					return (
-						<Badge className="badge">
+						<Badge className="badge" key={badge}>
 							{badge}
 							<LetterX
 								size={15}
 								strokeWidth={2}
 								color={'black'}
 								className="letterX"
-								onClick={console.log("click2")}
+								onClick={() => {
+
+									const nuevaLista = [...categoriaUnica]
+
+									// for (let i = 0; i < categoriaUnica.length; i++) {
+									// 	console.log(categoriaUnica[i] != badge)
+									// 	if (categoriaUnica[i] != badge) {
+									// 		// console.log('agregado')
+									// 		nuevaLista.push(categoriaUnica[i])
+									// 	}
+									// }
+
+									const index = categoriaUnica.indexOf(badge)
+
+									// const index = array.indexOf(2);
+									if (index > -1) {
+										nuevaLista.splice(index, 1);
+									}
+
+									// console.log(nuevaLista)
+
+									// console.log(index);
+
+									// setProductsArray([
+									// 	...products.slice(0, index),
+									// 	...products.slice(index + 1, products.length)
+									// ])\
+
+									// const nuevaArray = [...categoriaUnica.splice(0, index), ...categoriaUnica.splice(index + 1, categoriaUnica.length)]
+
+									// console.log(nuevaArray)
+
+									// console.log(nuevaLista);
+
+									setCategoriaUnica(nuevaLista)
+
+								}}
 							/>
 						</Badge>
 					);
