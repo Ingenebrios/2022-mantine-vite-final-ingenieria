@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './headercomponent.css'
 
@@ -13,13 +13,62 @@ import {
 	Avatar,
 	Menu,
 	Divider,
+	Drawer,
+	Button,
+	Group,
+	TextInput,
+	Textarea
 } from '@mantine/core';
 
-import { Settings, Search, Photo, MessageCircle, Trash, UserMinus } from 'tabler-icons-react';
+import { Settings, Search, Photo, MessageCircle, Trash, UserMinus, UserExclamation } from 'tabler-icons-react';
 
 const HeaderComponent = ({ setOpened, opened, user }) => {
+
+	const [openDrawer, setOpenDrawer] = useState(false);
+
 	return (
 		<Header height={60} p="md" className="header__container">
+			<Drawer
+				opened={openDrawer}
+				onClose={() => setOpenDrawer(false)}
+				title="Nueva queja"
+				padding="xl"
+				size="xl"
+			>
+
+				<div className="area_nombre_apellido_queja">
+					<TextInput className="input_nombre_queja"
+						placeholder="Nombre"
+						label="Ingrese su nombre"
+					/>
+					<TextInput className="input_nombre_queja"
+						placeholder="Apellido"
+						label="Ingrese su apellido"
+					/>
+				</div>
+
+				<TextInput className="input_nombre_queja"
+					placeholder="Correo"
+					label="Ingrese su correo"
+				/>
+
+				<Textarea className="input_nombre_queja"
+					placeholder="Escriba su queja"
+					label="Escriba su queja detallada porfavor"
+					autosize
+					minRows={2}
+				/>
+
+				<Button color="yellow" className="input_nombre_queja" onClick={() => {
+					setOpenDrawer(false)
+				}}>
+					Mandar queja
+				</Button>
+
+
+
+
+			</Drawer>
 			<div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
 				<MediaQuery largerThan="sm" styles={{ display: 'none' }}>
 					<Burger
@@ -40,6 +89,14 @@ const HeaderComponent = ({ setOpened, opened, user }) => {
 							<Menu.Label>Aplicacion</Menu.Label>
 							<Menu.Item icon={<Settings size={14} />}>Configuracion</Menu.Item>
 							<Menu.Item icon={<MessageCircle size={14} />}>Messages</Menu.Item>
+							<Menu.Item
+								onClick={() => {
+
+									setOpenDrawer(true)
+
+								}}
+								icon={<UserExclamation size={14} />}>Nueva Queja</Menu.Item>
+
 
 							<Divider />
 
