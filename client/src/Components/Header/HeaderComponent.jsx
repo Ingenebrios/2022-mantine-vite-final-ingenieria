@@ -17,8 +17,11 @@ import {
 	Button,
 	Group,
 	TextInput,
-	Textarea
+	Textarea,
+	Image
 } from '@mantine/core';
+
+import imagenQuejas from './quejas.png'
 
 import { Settings, Search, Photo, MessageCircle, Trash, UserMinus, UserExclamation } from 'tabler-icons-react';
 
@@ -64,6 +67,18 @@ const HeaderComponent = ({ setOpened, opened, user }) => {
 				}}>
 					Mandar queja
 				</Button>
+
+				<div style={{ width: 340, marginLeft: 'auto', marginRight: 'auto', marginTop: '50px', marginBottom: '50px' }}>
+					<Image
+						radius="md"
+						src={imagenQuejas}
+						alt="Random unsplash image"
+					/>
+				</div>
+
+				<Text align="center">Gracias por escribirnos, intentamos todos los dias mejorar su experiencia con nosotros.</Text>
+
+
 
 
 
