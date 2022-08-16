@@ -2,7 +2,7 @@ import React from 'react'
 
 function Supermercados1() {
   return (
-    <div>Supermercados1</div>
+    <div className='SupermercadosContainer'>agregando superes</div>
   )
 }
 
