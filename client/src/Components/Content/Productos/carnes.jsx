@@ -65,16 +65,18 @@ function Democarta({ setItems }) {
     return (
 
         <div>
-            <Stepper active={2} color="yellow" size="md" breakpoint="sm" style={{ marginRight: '45px' }}>
-                <Stepper.Step label="Primer paso" description="Elegir supermercado">
-                </Stepper.Step>
-                <Stepper.Step label="Segundo paso" description="Agregar productos">
-                </Stepper.Step>
-                <Stepper.Step label="Tercer paso" description="Confirmar compra">
-                </Stepper.Step>
-                <Stepper.Completed>
-                </Stepper.Completed>
-            </Stepper>
+            <Stepper active={3} color="yellow" size="lg" breakpoint="sm" style={{ marginRight: '45px', fontFamily: 'Overpass, sans-serif' }}>
+				<Stepper.Step label="Primer paso" description="Elegir supermercado">
+				</Stepper.Step>
+				<Stepper.Step label="Segundo paso" description="Elegir categoria">
+				</Stepper.Step>
+				<Stepper.Step label="Tercer paso" description="Agregar productos">
+				</Stepper.Step>
+				<Stepper.Step label="Cuarto paso" description="Confirmar compra">
+				</Stepper.Step>
+				<Stepper.Completed>
+				</Stepper.Completed>
+			</Stepper>
 
             <Divider my="sm" />
 

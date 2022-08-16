@@ -48,12 +48,14 @@ const Supermercados = ({ supermercado, setSupermercado, setCategoria, categoria 
 	return (
 		<div className="SupermercadoContainer">
 
-			<Stepper active={1} color="yellow" size="lg" breakpoint="sm" style={{ marginRight: '45px', fontFamily: 'Overpass, sans-serif' }}>
+			<Stepper active={2} color="yellow" size="lg" breakpoint="sm" style={{ marginRight: '45px', fontFamily: 'Overpass, sans-serif' }}>
 				<Stepper.Step label="Primer paso" description="Elegir supermercado">
 				</Stepper.Step>
-				<Stepper.Step label="Segundo paso" description="Agregar productos">
+				<Stepper.Step label="Segundo paso" description="Elegir categoria">
 				</Stepper.Step>
-				<Stepper.Step label="Tercer paso" description="Confirmar compra">
+				<Stepper.Step label="Tercer paso" description="Agregar productos">
+				</Stepper.Step>
+				<Stepper.Step label="Cuarto paso" description="Confirmar compra">
 				</Stepper.Step>
 				<Stepper.Completed>
 				</Stepper.Completed>
@@ -61,13 +63,13 @@ const Supermercados = ({ supermercado, setSupermercado, setCategoria, categoria 
 
 			<Divider my="sm" />
 
-			<Autocomplete
+			{/* <Autocomplete
 				value={supermercado} onChange={setSupermercado}
 				label="Seleccione el supermercado de su eleccion."
 				placeholder="Supermercados"
 				data={['La Torre', 'Paiz', 'Walmart', 'PriceSmart', 'Maxi Despensa']}
 				className="AutoSupermercado"
-			/>
+			/> */}
 			{
 				categoriaUnica.map(badge => {
 					return (
