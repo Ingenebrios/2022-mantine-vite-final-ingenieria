@@ -27,7 +27,7 @@
 	margin: 0 0 15px;
 	padding: 15px;
 	box-sizing: border-box;
-	font-size: 16px; /*Tamaño original: 14px*/
+	font-size: 15px; /*Tamaño original: 14px*/
 }
 
 .form button {
@@ -39,7 +39,7 @@
 	border: 0;
 	padding: 15px;
 	color: #FFFFFF;
-	font-size: 16px; /*Tamaño orignal: 14px*/
+	font-size: 15px; /*Tamaño orignal: 14px*/
 	-webkit-transition: all 0.3 ease;
 	transition: all 0.3 ease;
 	cursor: pointer;

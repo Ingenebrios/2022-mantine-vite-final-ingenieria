@@ -139,8 +139,8 @@ function Democarta({ setItems }) {
                                 // console.log(item);
                                 return (
                                     showNotification({
-                                        title: 'Default notification',
-                                        message: 'Hey there, your code is awesome! 🤥',
+                                        title: 'Item agregado a carrito',
+                                        message: 'Se ha agregado ' + item.label,
                                     })
                                 )
                             }
