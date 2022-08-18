@@ -34,7 +34,7 @@ const imagenes = [
 	{ id: 'Bebidas', src: bebidas },
 ]
 
-const Supermercados = ({ supermercado, setSupermercado, setCategoria, categoria }) => {
+const Supermercados = ({ supermercado, setSupermercado, setCategoria, categoria, setActiveTab  }) => {
 
 	// const categoriaUnica = []
 	const [categoriaUnica, setCategoriaUnica] = useState([]);
@@ -70,7 +70,7 @@ const Supermercados = ({ supermercado, setSupermercado, setCategoria, categoria 
 				data={['La Torre', 'Paiz', 'Walmart', 'PriceSmart', 'Maxi Despensa']}
 				className="AutoSupermercado"
 			/> */}
-			{
+			{/* {
 				categoriaUnica.map(badge => {
 					return (
 						<Badge className="badge" key={badge}>
@@ -121,14 +121,14 @@ const Supermercados = ({ supermercado, setSupermercado, setCategoria, categoria 
 						</Badge>
 					);
 				})
-			}
+			} */}
 			<div className="supermercado">
 				<div className="inferior">
 					<div className="gridImagenes">
 						{imagenes.map(imagen => {
 							return (
 								<div key={imagen.id}>
-									<img alt={imagen.id} onClick={() => setCategoria(setCategoria => [...setCategoria, imagen.id])} className="imagen" src={imagen.src}></img>
+									<img onClick={() => setActiveTab(2)} alt={imagen.id} className="imagen" src={imagen.src}></img>
 									<h3 id="tituloImg">{imagen.id}</h3>
 								</div>
 							)
