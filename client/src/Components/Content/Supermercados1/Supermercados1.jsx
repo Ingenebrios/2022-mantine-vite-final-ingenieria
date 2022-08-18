@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react'
 import { Divider, Stepper, Button, Group } from '@mantine/core'
 import { collection, getDocs, addDoc, updateDoc, doc, deleteDoc } from 'firebase/firestore'
+import { db } from '../../../config/firebase-config'
+import './Supermercados1.css'
 
-function Supermercados1() {
+function Supermercados1({setActiveTab}) {
 
 	const [supermercados, setSupermercados] = useState([]);
 
@@ -12,12 +14,11 @@ function Supermercados1() {
 
 		const reatrerSupermercado = async () => {
 			const datos = await getDocs(referenciaSupermercado)
-			setSupermercados(datos.docs.map(doc => ({ ...doc.data(), id: doc.id })))
+			setSupermercados(datos.docs.map(doc => ({ ...doc.data(), nombre: doc.nombre })))
 		}
 		reatrerSupermercado()
 
 	}, []);
-
 
   return (
     <div className='SupermercadosContainer'>
@@ -33,6 +34,16 @@ function Supermercados1() {
 				<Stepper.Completed>
 				</Stepper.Completed>
 			</Stepper>
+
+			<div className='gridSuperes'>
+				{supermercados.map(supermercado => {
+					return (
+						<div className='super'>
+							<img src={supermercado.url} alt={supermercado.nombre} className="superImg" onClick={() => { setActiveTab(1); console.log('first')}} />
+						</div>
+					)
+				})}
+			</div>
     </div>
   )
 }

@@ -33,7 +33,7 @@ function ContentComponent() {
 				<Tabs.Tab label="Supermercados" >
 
 
-					<Supermercados1 supermercado={supermercado} setSupermercado={setSupermercado} setCategoria={setcategoria} categoria={categoria} />
+					<Supermercados1 setActiveTab={setActiveTab} />
 
 
 				</Tabs.Tab>
