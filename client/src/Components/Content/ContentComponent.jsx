@@ -9,6 +9,8 @@ import {
 
 import { Photo, MessageCircle, Settings } from 'tabler-icons-react'
 
+import Supermercados1 from './Supermercados1/Supermercados1.jsx'
+
 import Supermercados from './Supermercados/Supermercados.jsx'
 
 import Democarta from './Productos/carnes.jsx';
@@ -29,6 +31,14 @@ function ContentComponent() {
 
 			<Tabs grow position="apart" variant="outline" active={activeTab} onTabChange={setActiveTab}>
 				<Tabs.Tab label="Supermercados" >
+
+
+					<Supermercados1 setActiveTab={setActiveTab} />
+
+
+				</Tabs.Tab>
+				
+				<Tabs.Tab label="Categorias" >
 
 
 					<Supermercados supermercado={supermercado} setSupermercado={setSupermercado} setCategoria={setcategoria} categoria={categoria} />

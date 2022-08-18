@@ -83,12 +83,14 @@ const Checkout = ({ items, setActiveTab }) => {
 
 			</Modal>
 
-			<Stepper active={3} color="yellow" size="md" breakpoint="sm" style={{ marginRight: '45px' }}>
+			<Stepper active={4} color="yellow" size="lg" breakpoint="sm" style={{ marginRight: '45px', fontFamily: 'Overpass, sans-serif' }}>
 				<Stepper.Step label="Primer paso" description="Elegir supermercado">
 				</Stepper.Step>
-				<Stepper.Step label="Segundo paso" description="Agregar productos">
+				<Stepper.Step label="Segundo paso" description="Elegir categoria">
 				</Stepper.Step>
-				<Stepper.Step label="Tercer paso" description="Confirmar compra">
+				<Stepper.Step label="Tercer paso" description="Agregar productos">
+				</Stepper.Step>
+				<Stepper.Step label="Cuarto paso" description="Confirmar compra">
 				</Stepper.Step>
 				<Stepper.Completed>
 				</Stepper.Completed>
