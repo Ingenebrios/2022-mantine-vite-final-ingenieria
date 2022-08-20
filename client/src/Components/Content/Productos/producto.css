@@ -14,3 +14,11 @@
     justify-content: center;
     align-items: center;
 }
+
+@media all and (max-width: 820px) {
+    /*Grid con los productos de la categoria seleccionada*/
+    .seccion_cartas {
+        grid-template-columns: auto auto;
+        grid-row: auto;
+    }
+}

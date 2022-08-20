@@ -166,7 +166,7 @@ function Democarta({ setItems }) {
                         if (!productosElegidos.includes(elemento.value)) {
                             return (
 
-                                <Card key={elemento.label} shadow="sm" p="lg" style={{ maxWidth: '300px', maxHeight: '200px', margin: '15px' }}>
+                                <Card key={elemento.label} shadow="sm" p="lg" style={{ maxWidth: '300px', margin: '15px' }}>
                                     <Card.Section>
                                         <Image src={elemento.src} height={160} alt="imagen" />
                                     </Card.Section>
