@@ -97,7 +97,7 @@ function Democarta({ setItems }) {
                             if (elemento === propiedades[i].value) {
                                 return (
                                     <Card key={propiedades[i].value} shadow="sm" p="lg"
-                                        style={{ marginTop: '15px', maxWidth: '260px', minWidth: '260px', maxHeight: '300px' }}>
+                                        style={{ marginTop: '15px', maxWidth: '260px', minWidth: '100px', maxHeight: '300px', minHeight:'100%'}}>
                                         <Card.Section>
                                             <Image src={propiedades[i].src} height={160} alt="Norway" />
                                         </Card.Section>
