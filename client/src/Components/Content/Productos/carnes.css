@@ -10,5 +10,8 @@
     .PriceTag {
         margin-bottom: 10px;
     }
-    
+    .addedCard{
+        min-height:100%;
+        min-width: 100px;
+    }
 }

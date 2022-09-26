@@ -96,8 +96,8 @@ function Democarta({ setItems }) {
                         for (let i = 0; i < propiedades.length; i++) {
                             if (elemento === propiedades[i].value) {
                                 return (
-                                    <Card key={propiedades[i].value} shadow="sm" p="lg"
-                                        style={{ marginTop: '15px', maxWidth: '260px', minWidth: '260px', maxHeight: '300px' }}>
+                                    <Card className='addedCard' key={propiedades[i].value} shadow="sm" p="lg"
+                                        style={{ marginTop: '15px', maxWidth: '260px',  maxHeight: '300px', minHeight:'100%'}}>
                                         <Card.Section>
                                             <Image src={propiedades[i].src} height={160} alt="Norway" />
                                         </Card.Section>
