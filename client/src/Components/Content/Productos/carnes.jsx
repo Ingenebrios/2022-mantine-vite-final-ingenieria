@@ -1,59 +1,65 @@
-import React, { useEffect, useState } from 'react'
-import {
-  MultiSelect, Card, Image, Text, Badge, Button, Group, Slider, Divider, Stepper,
-} from '@mantine/core'
-import { showNotification } from '@mantine/notifications'
-
+import React from 'react'
+import { useEffect } from 'react';
+import { useState } from 'react';
 // import { Card, Image, Text, Badge, Button, Group, useMantineTheme } from '@mantine/core';
-import Sal2 from './img_carnes/img2.png'
-import Sal1 from './img_carnes/img1.svg'
-import Sal3 from './img_carnes/img3.svg'
-import Sal4 from './img_carnes/img4.svg'
-import Sal5 from './img_carnes/img5.svg'
-import Sal6 from './img_carnes/img6.svg'
-import Sal7 from './img_carnes/img7.svg'
-import Sal8 from './img_carnes/img8.svg'
+import Sal2 from "./img_carnes/img2.png"
+import Sal1 from "./img_carnes/img1.svg"
+import Sal3 from "./img_carnes/img3.svg"
+import Sal4 from "./img_carnes/img4.svg"
+import Sal5 from "./img_carnes/img5.svg"
+import Sal6 from "./img_carnes/img6.svg"
+import Sal7 from "./img_carnes/img7.svg"
+import Sal8 from "./img_carnes/img8.svg"
 import './producto.css'
-
+import { SimpleGrid } from '@mantine/core';
+import { showNotification } from '@mantine/notifications';
+import { MultiSelect, Card, Image, Text, Badge, Button, Group, Slider, Divider, Stepper, Autocomplete } from '@mantine/core';
 
 function Democarta({ setItems }) {
-  // const [cuenta, setCuenta] = React.useState(0);
-  // console.log(cuenta)
+    // const [cuenta, setCuenta] = React.useState(0);
+    // console.log(cuenta)
 
-  const [propiedades, setpropiedades] = useState(
-    [
-      {
-        value: 'salchicha-de-pavo', label: 'Salchica de pavo', src: Sal1, unidades: 20, precio: 29.50, articulosllevar: 0,
-      },
-      {
-        value: 'salchicha-de-res', label: 'Salchica de res', src: Sal2, unidades: 20, precio: 16.00, articulosllevar: 0,
-      },
-      {
-        value: 'salchicha-de-cocktail', label: 'Salchica Cocktail', src: Sal3, unidades: 30, precio: 26.50, articulosllevar: 0,
-      },
-      {
-        value: 'salchicha-de-gigante', label: 'Salchica Gigante', src: Sal4, unidades: 12, precio: 14.90, articulosllevar: 0,
-      },
-      {
-        value: 'salchicha-de-hotdog', label: 'Salchica de Hotdog', src: Sal5, unidades: 5, precio: 29.50, articulosllevar: 0,
-      },
-      {
-        value: 'bistec-especial', label: 'Bistec Especial', src: Sal6, unidades: 20, precio: 38.60, articulosllevar: 0,
-      },
-      {
-        value: 'bistec-economico', label: 'Bistec Economico', src: Sal7, unidades: 50, precio: 26.50, articulosllevar: 0,
-      },
-      {
-        value: 'arrachera-original', label: 'Arrachera Original', src: Sal8, unidades: 17, precio: 143.90, articulosllevar: 0,
-      },
-    ],
-  )
+    const [propiedades, setpropiedades] = useState(
+        [
+            { value: 'salchicha-de-pavo', label: 'Salchica de pavo', src: Sal1, unidades: 20, precio: 29.50, articulosllevar: 0 },
+            { value: 'salchicha-de-res', label: 'Salchica de res', src: Sal2, unidades: 20, precio: 16.00, articulosllevar: 0 },
+            { value: 'salchicha-de-cocktail', label: 'Salchica Cocktail', src: Sal3, unidades: 30, precio: 26.50, articulosllevar: 0 },
+            { value: 'salchicha-de-gigante', label: 'Salchica Gigante', src: Sal4, unidades: 12, precio: 14.90, articulosllevar: 0 },
+            { value: 'salchicha-de-hotdog', label: 'Salchica de Hotdog', src: Sal5, unidades: 5, precio: 29.50, articulosllevar: 0 },
+            { value: 'bistec-especial', label: 'Bistec Especial', src: Sal6, unidades: 20, precio: 38.60, articulosllevar: 0 },
+            { value: 'bistec-economico', label: 'Bistec Economico', src: Sal7, unidades: 50, precio: 26.50, articulosllevar: 0 },
+            { value: 'arrachera-original', label: 'Arrachera Original', src: Sal8, unidades: 17, precio: 143.90, articulosllevar: 0 },
+        ]
+    );
 
-  const [productosElegidos, setProductosElegidos] = useState([])
+    const [productosElegidos, setProductosElegidos] = useState([]);
 
-  useEffect(() => {
-    if (productosElegidos.length > 0) {
-      // console.log(productosElegidos)
+    useEffect(() => {
+        if (productosElegidos.length > 0) {
+            // console.log(productosElegidos)
+        }
+    }, [productosElegidos]);
+
+    const actualizarContadores = indice => e => {
+        // console.log('Indice de la propiedad: ' + indice)
+        // console.log('Nombre de la propiedad: ' + e)
+        let newArr = [...propiedades]
+        newArr[indice].articulosllevar = e
+        setpropiedades(newArr)
+    }
+
+    const handleBadgeClick = (elemento) => {
+
+        console.log(elemento)
+
+        const nuevaLista = [...productosElegidos]
+
+        nuevaLista.push(elemento.value)
+
+        // console.log(nuevaLista)
+
+        setProductosElegidos(nuevaLista)
+
     }
 
     return (
@@ -91,7 +97,7 @@ function Democarta({ setItems }) {
                             if (elemento === propiedades[i].value) {
                                 return (
                                     <Card key={propiedades[i].value} shadow="sm" p="lg"
-                                        style={{ marginTop: '15px', maxWidth: '260px', minWidth: '100px', maxHeight: '300px', minHeight:'100%'}}>
+                                        style={{ marginTop: '15px', maxWidth: '260px', minWidth: '260px', maxHeight: '300px' }}>
                                         <Card.Section>
                                             <Image src={propiedades[i].src} height={160} alt="Norway" />
                                         </Card.Section>
@@ -119,72 +125,74 @@ function Democarta({ setItems }) {
                                 )
                             }
                         }
-                      }
                     })
                 }
-      </div>
+            </div>
 
-      <div className="area_boton_aplicar">
+            <div className="area_boton_aplicar">
 
-        <Button
-          color="orange"
-          onClick={() => {
-            setItems(propiedades)
-            propiedades.map((item) => {
-              if (item.articulosllevar > 0) {
-                // console.log(item);
-                return (
-                  showNotification({
-                    title: 'Item agregado a carrito',
-                    message: `Se ha agregado ${item.label}`,
-                  })
-                )
-              }
-            })
-          }}
-        >
-          Agregar a carrito
-        </Button>
+                <Button
+                    color='orange'
+                    onClick={() => {
+                        setItems(propiedades)
+                        propiedades.map(item => {
 
-      </div>
+                            if (item.articulosllevar > 0) {
+                                // console.log(item);
+                                return (
+                                    showNotification({
+                                        title: 'Item agregado a carrito',
+                                        message: 'Se ha agregado ' + item.label,
+                                    })
+                                )
+                            }
+                        })
+                    }}
+                >Agregar a carrito</Button>
 
-      <Divider my="sm" />
+            </div>
 
-      <div className="seccion_cartas">
 
-        {
+            <Divider my="sm" />
+
+            <div className="seccion_cartas">
+
+
+                {
+
 
                     propiedades.map((elemento) => {
-                      if (!productosElegidos.includes(elemento.value)) {
-                        return (
 
-                          <Card key={elemento.label} shadow="sm" p="lg" style={{ maxWidth: '300px', margin: '15px' }}>
-                            <Card.Section>
-                              <Image src={elemento.src} height={160} alt="imagen" />
-                            </Card.Section>
+                        if (!productosElegidos.includes(elemento.value)) {
+                            return (
 
-                            <Group position="apart" style={{ marginBottom: 5 }}>
-                              <Text weight={500}>{elemento.label}</Text>
-                              <Badge
-                                onClick={() => {
-                                  handleBadgeClick(elemento)
-                                }}
-                                color="orange"
-                              >
-                                Incluir
-                              </Badge>
-                            </Group>
-                          </Card>
+                                <Card key={elemento.label} shadow="sm" p="lg" style={{ maxWidth: '300px', margin: '15px' }}>
+                                    <Card.Section>
+                                        <Image src={elemento.src} height={160} alt="imagen" />
+                                    </Card.Section>
 
-                        )
-                      }
+                                    <Group position="apart" style={{ marginBottom: 5 }}>
+                                        <Text weight={500}>{elemento.label}</Text>
+                                        <Badge onClick={() => {
+                                            handleBadgeClick(elemento)
+                                        }} color="orange">
+                                            Incluir
+                                        </Badge>
+                                    </Group>
+                                </Card>
+
+                            )
+                        }
+
+
                     })
 
                 }
-      </div>
+            </div>
 
-    </div>
+        </div>
 
-  )
+        
+    )
 }
-export default Democarta
+export default Democarta;
