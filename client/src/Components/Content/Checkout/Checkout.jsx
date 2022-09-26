@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Stepper, Divider, Text, Table, Button, Accordion, Badge, ThemeIcon, Card, Group, Image, Modal, TextInput } from '@mantine/core';
-import { CurrencyDollar } from 'tabler-icons-react'
-import { CirclePlus } from 'tabler-icons-react';
+import React, { useState, useEffect } from 'react'
+import {
+  Stepper, Divider, Text, Table, Button, Accordion, Badge, ThemeIcon, Card, Group, Image, Modal, TextInput,
+} from '@mantine/core'
+import { CurrencyDollar, CirclePlus } from 'tabler-icons-react'
 
-import { showNotification } from '@mantine/notifications';
-
+import { showNotification } from '@mantine/notifications'
 
 import loc1 from './locations/loc1.png'
 
@@ -12,94 +12,91 @@ import imgcupon from './locations/imagencupon.svg'
 
 import './checkout.css'
 
-const Checkout = ({ items, setActiveTab }) => {
+function Checkout({ items, setActiveTab }) {
+  const [totalCompra, settotalCompra] = useState(0)
 
-	const [totalCompra, settotalCompra] = useState(0);
+  const [abrirModalCupon, setabrirModalCupon] = useState(false)
 
-	const [abrirModalCupon, setabrirModalCupon] = useState(false);
+  const filasTabla = items.map((item) => {
+    if (item.articulosllevar > 0) {
+      return (
+        <tr key={item.value}>
+          <td>{item.label}</td>
+          <td>{item.articulosllevar}</td>
+          <td>{item.precio}</td>
+        </tr>
+      )
+    }
+  })
 
-	const filasTabla = items.map((item) => {
-		if (item.articulosllevar > 0) {
-			return (
-				<tr key={item.value}>
-					<td>{item.label}</td>
-					<td>{item.articulosllevar}</td>
-					<td>{item.precio}</td>
-				</tr>
-			)
-		}
-	})
+  useEffect(() => {
+    let total = 0.0
+    for (let i = 0; i < items.length; i++) {
+      // console.log(items[i].articulosllevar * items[i].precio)
+      total += (items[i].articulosllevar * items[i].precio)
+    }
+    settotalCompra(total.toFixed(2))
+  }, [items])
 
-	useEffect(() => {
+  // const totalCompra = () => {
+  // 	let total = 0.0;
+  // 	for (let i = 0; i < items.length; i++) {
+  // 		console.log(items[i].articulosllevar * items[i].precio)
+  // 		total = total + (items[i].articulosllevar * items[i].precio)
+  // 	}
+  // 	return total
+  // }
 
-		let total = 0.0;
-		for (let i = 0; i < items.length; i++) {
-			// console.log(items[i].articulosllevar * items[i].precio)
-			total = total + (items[i].articulosllevar * items[i].precio)
-		}
-		settotalCompra(total.toFixed(2))
+  return (
+    <div>
 
-	}, [items]);
+      <Modal
+        opened={abrirModalCupon}
+        onClose={() => setabrirModalCupon(false)}
+      >
+        <TextInput
+          style={{ marginBottom: '15px' }}
+          placeholder="Ingresar nuevo cupon"
+          label="Numeracion del cupon"
+        />
+        <div style={{
+				  width: 240, marginLeft: 'auto', marginRight: 'auto', marginBottom: '15px',
+        }}
+        >
+          <Image
+            radius="md"
+            src={imgcupon}
+          />
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Button
+            color="yellow"
+            onClick={() => {
+              settotalCompra((prev) => prev * 0.95)
+              setabrirModalCupon(false)
+              showNotification({
+                title: 'Cupon aceptado',
+                message: 'Se le ha descontado un 5% a su compra!',
+              })
+            }}
+          >
+            Aplicar cupon
+          </Button>
+        </div>
 
-	// const totalCompra = () => {
-	// 	let total = 0.0;
-	// 	for (let i = 0; i < items.length; i++) {
-	// 		console.log(items[i].articulosllevar * items[i].precio)
-	// 		total = total + (items[i].articulosllevar * items[i].precio)
-	// 	}
-	// 	return total
-	// }
+      </Modal>
 
-	return (
-		<div>
+      <Stepper active={4} color="yellow" size="lg" breakpoint="sm" style={{ marginRight: '45px', fontFamily: 'Overpass, sans-serif' }}>
+        <Stepper.Step label="Primer paso" description="Elegir supermercado" />
+        <Stepper.Step label="Segundo paso" description="Elegir categoria" />
+        <Stepper.Step label="Tercer paso" description="Agregar productos" />
+        <Stepper.Step label="Cuarto paso" description="Confirmar compra" />
+        <Stepper.Completed />
+      </Stepper>
 
-			<Modal
-				opened={abrirModalCupon}
-				onClose={() => setabrirModalCupon(false)}
-			>
-				<TextInput style={{ marginBottom: '15px' }}
-					placeholder="Ingresar nuevo cupon"
-					label="Numeracion del cupon"
-				/>
-				<div style={{ width: 240, marginLeft: 'auto', marginRight: 'auto', marginBottom: '15px' }}>
-					<Image
-						radius="md"
-						src={imgcupon}
-					/>
-				</div>
-				<div style={{ display: 'flex', justifyContent: 'center' }}>
-					<Button color="yellow" onClick={() => {
-						settotalCompra((prev) => prev * 0.95)
-						setabrirModalCupon(false)
-						showNotification({
-							title: 'Cupon aceptado',
-							message: 'Se le ha descontado un 5% a su compra!',
-						})
-					}}>
-						Aplicar cupon
-					</Button>
-				</div>
+      <Divider my="sm" />
 
-
-			</Modal>
-
-			<Stepper active={4} color="yellow" size="lg" breakpoint="sm" style={{ marginRight: '45px', fontFamily: 'Overpass, sans-serif' }}>
-				<Stepper.Step label="Primer paso" description="Elegir supermercado">
-				</Stepper.Step>
-				<Stepper.Step label="Segundo paso" description="Elegir categoria">
-				</Stepper.Step>
-				<Stepper.Step label="Tercer paso" description="Agregar productos">
-				</Stepper.Step>
-				<Stepper.Step label="Cuarto paso" description="Confirmar compra">
-				</Stepper.Step>
-				<Stepper.Completed>
-				</Stepper.Completed>
-			</Stepper>
-
-			<Divider my="sm" />
-
-
-			{
+      {
 				(totalCompra > 0)
 					?
 					(
@@ -343,6 +340,7 @@ const Checkout = ({ items, setActiveTab }) => {
             <div className="card card-front animate resaltada">
               <div className="number">
                 <div className="label numeration">Numeracion resaltada</div>
+
                 <span>3456</span>
                 <span>2890</span>
                 <span>1616</span>
@@ -374,6 +372,7 @@ const Checkout = ({ items, setActiveTab }) => {
             <div className="card card-front animate">
               <div className="number">
                 <div className="label numeration">Numeracion resaltada</div>
+
                 <span>5550</span>
                 <span>6143</span>
                 <span>3017</span>
@@ -496,11 +495,8 @@ const Checkout = ({ items, setActiveTab }) => {
 				  :					null
 			}
 
-
-
-
-		</div>
-	)
+    </div>
+  )
 }
 
 export default Checkout

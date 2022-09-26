@@ -1,118 +1,112 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-import { motion } from "framer-motion"
-
-import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 
 import { collection, getDocs } from 'firebase/firestore'
 
 import './notificaciones.css'
 
 import {
-	Text,
-	Paper,
-	Divider,
-	Code,
-	ScrollArea,
-	Notification,
-} from '@mantine/core';
+  Text,
+  Paper,
+  Divider,
+  Code,
+  ScrollArea,
+  Notification,
+} from '@mantine/core'
 
+import {
+  Check, X, ShoppingCart, Settings,
+} from 'tabler-icons-react'
 import { db } from '../../../config/firebase-config'
 
-import { Check } from 'tabler-icons-react';
-import { X } from 'tabler-icons-react';
+function Notificaciones({ id }) {
+  const [notificaciones, setNotificaciones] = useState([])
 
-import { ShoppingCart } from 'tabler-icons-react';
-import { Settings } from 'tabler-icons-react';
+  const [notificacionesEspecificas, setNotificacionesEspecificas] = useState([])
 
-const Notificaciones = ({ id }) => {
+  useEffect(() => {
+    const referenciaNotificaciones = collection(db, 'notificaciones')
 
-	const [notificaciones, setNotificaciones] = useState([]);
+    const reatrerNotificaciones = async () => {
+      const datos = await getDocs(referenciaNotificaciones)
+      setNotificaciones(datos.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+    }
+    reatrerNotificaciones()
+  }, [id])
 
-	const [notificacionesEspecificas, setNotificacionesEspecificas] = useState([]);
+  useEffect(() => {
+    const notificacionesTemps = []
 
-	useEffect(() => {
+    for (let i = 0; i < notificaciones.length; i++) {
+      if (notificaciones[i].id_usuario === id) {
+        // console.log(notificaciones[i].fecha.seconds)
+        // console.log(new Date(notificaciones[i].fecha.seconds * 1000).toLocaleString())
+        notificacionesTemps.push(notificaciones[i])
+      }
+    }
 
-		const referenciaNotificaciones = collection(db, 'notificaciones')
+    setNotificacionesEspecificas(notificacionesTemps)
+  }, [notificaciones])
 
-		const reatrerNotificaciones = async () => {
-			const datos = await getDocs(referenciaNotificaciones)
-			setNotificaciones(datos.docs.map(doc => ({ ...doc.data(), id: doc.id })))
-		}
-		reatrerNotificaciones()
+  // useEffect(() => {
+  // 	console.log(notificacionesEspecificas);
+  // }, [notificacionesEspecificas]);
 
-	}, [id]);
+  return (
+    <div>
+      {(notificacionesEspecificas.length > 0) && notificacionesEspecificas.map((notificacion) => (
+        // <Paper shadow="lg" radius="md" p="md" className='paper__notificacion__individual' key={notificacion.id}
+        // 	style={{ backgroundColor: notificacion.estado ? 'rgb(186, 254, 177)' : 'rgb(254, 177, 177)' }}>
+        // 	<div className="notificacion__individual">
+        // 		<div className="area__notificacion">
+        // 			{
 
-	useEffect(() => {
+			  // 			}
+        // 			<Divider my="sm" variant="dashed" />
+        // 			{
 
-		const notificacionesTemps = []
+			  // 			}
 
-		for (let i = 0; i < notificaciones.length; i++) {
-			if (notificaciones[i].id_usuario === id) {
-				// console.log(notificaciones[i].fecha.seconds)
-				// console.log(new Date(notificaciones[i].fecha.seconds * 1000).toLocaleString())
-				notificacionesTemps.push(notificaciones[i])
-			}
-		}
-
-		setNotificacionesEspecificas(notificacionesTemps)
-
-	}, [notificaciones]);
-
-	// useEffect(() => {
-	// 	console.log(notificacionesEspecificas);
-	// }, [notificacionesEspecificas]);
-
-	return (
-		<div>
-			{(notificacionesEspecificas.length > 0) && notificacionesEspecificas.map(notificacion => {
-				return (
-					// <Paper shadow="lg" radius="md" p="md" className='paper__notificacion__individual' key={notificacion.id}
-					// 	style={{ backgroundColor: notificacion.estado ? 'rgb(186, 254, 177)' : 'rgb(254, 177, 177)' }}>
-					// 	<div className="notificacion__individual">
-					// 		<div className="area__notificacion">
-					// 			{
-
-					// 			}
-					// 			<Divider my="sm" variant="dashed" />
-					// 			{
-
-					// 			}
-
-
-					<Notification
-						color={notificacion.estado ? 'green' : 'red'}
-						title={notificacion.estado ? 'Completado' : 'Error'}
-						disallowClose
-						key={notificacion.id}
-						className="mensaje__individual">
-						{notificacion.informacion}
-						<Divider my="sm" variant="dashed" />
-						{(notificacion.categoria === 'setting')
-							?
-							<div  >
-								<Settings className='icono__notificacion'
-									size={20}
-									strokeWidth={2}
-									color={'#194b4d'}
-								/>
-							</div>
-							:
-							<div >
-								<ShoppingCart className='icono__notificacion'
-									size={20}
-									strokeWidth={2}
-									color={'#194b4d'}
-								/>
-							</div>}
-						<Code>{
-							new Date(notificacion.fecha.seconds * 1000).toLocaleString()}
-						</Code>
-					</Notification>
-				)
-			})}
-		</div>
-	)
+        <Notification
+          color={notificacion.estado ? 'green' : 'red'}
+          title={notificacion.estado ? 'Completado' : 'Error'}
+          disallowClose
+          key={notificacion.id}
+          className="mensaje__individual"
+        >
+          {notificacion.informacion}
+          <Divider my="sm" variant="dashed" />
+          {(notificacion.categoria === 'setting')
+						  ? (
+  <div>
+    <Settings
+      className="icono__notificacion"
+      size={20}
+      strokeWidth={2}
+      color="#194b4d"
+    />
+  </div>
+						  )
+						  : (
+  <div>
+    <ShoppingCart
+      className="icono__notificacion"
+      size={20}
+      strokeWidth={2}
+      color="#194b4d"
+    />
+  </div>
+            )}
+          <Code>
+            {
+							new Date(notificacion.fecha.seconds * 1000).toLocaleString()
+}
+          </Code>
+        </Notification>
+      ))}
+    </div>
+  )
 }
 
 export default Notificaciones
