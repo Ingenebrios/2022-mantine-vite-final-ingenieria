@@ -1,0 +1,14 @@
+.imagenes{
+    width: 200px;
+}
+
+@media all and (max-width: 820px) {
+    .imagenes{
+        width: 150px;
+    }
+
+    .PriceTag {
+        margin-bottom: 10px;
+    }
+    
+}

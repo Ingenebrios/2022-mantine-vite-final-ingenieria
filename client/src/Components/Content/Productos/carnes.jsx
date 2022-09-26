@@ -55,85 +55,69 @@ function Democarta({ setItems }) {
     if (productosElegidos.length > 0) {
       // console.log(productosElegidos)
     }
-  }, [productosElegidos])
 
-  const actualizarContadores = (indice) => (e) => {
-    // console.log('Indice de la propiedad: ' + indice)
-    // console.log('Nombre de la propiedad: ' + e)
-    const newArr = [...propiedades]
-    newArr[indice].articulosllevar = e
-    setpropiedades(newArr)
-  }
+    return (
 
-  const handleBadgeClick = (elemento) => {
-    // console.log(elemento)
+        <div>
+            <Stepper active={3} color="yellow" size="lg" breakpoint="sm" style={{ marginRight: '45px', fontFamily: 'Overpass, sans-serif' }}>
+				<Stepper.Step label="Primer paso" description="Elegir supermercado">
+				</Stepper.Step>
+				<Stepper.Step label="Segundo paso" description="Elegir categoria">
+				</Stepper.Step>
+				<Stepper.Step label="Tercer paso" description="Agregar productos">
+				</Stepper.Step>
+				<Stepper.Step label="Cuarto paso" description="Confirmar compra">
+				</Stepper.Step>
+				<Stepper.Completed>
+				</Stepper.Completed>
+			</Stepper>
 
-    const nuevaLista = [...productosElegidos]
+            <Divider my="sm" />
 
-    nuevaLista.push(elemento.value)
+            <MultiSelect
+                data={propiedades}
+                label="Porfavor elija los productos que desea agregar"
+                placeholder="Elije tus productos"
+                clearButtonLabel="Limpiar"
+                clearable
+                maxDropdownHeight={160}
+                onChange={setProductosElegidos}
+            />
 
-    // console.log(nuevaLista)
+            <div style={{ width: '100%' }} className="seccion_cartas">
+                {
+                    productosElegidos.map(elemento => {
+                        for (let i = 0; i < propiedades.length; i++) {
+                            if (elemento === propiedades[i].value) {
+                                return (
+                                    <Card key={propiedades[i].value} shadow="sm" p="lg"
+                                        style={{ marginTop: '15px', maxWidth: '260px', minWidth: '100px', maxHeight: '300px', minHeight:'100%'}}>
+                                        <Card.Section>
+                                            <Image src={propiedades[i].src} height={160} alt="Norway" />
+                                        </Card.Section>
 
-    setProductosElegidos(nuevaLista)
-  }
+                                        <Group position="apart" style={{ marginBottom: 5, marginTop: '10px' }}>
+                                            <Text weight={500}>{propiedades[i].label}</Text>
+                                            <Badge color="green" variant="light">
+                                                {"Q " + propiedades[i].precio}
+                                            </Badge>
 
-  return (
-
-    <div>
-      <Stepper active={3} color="yellow" size="lg" breakpoint="sm" style={{ marginRight: '45px', fontFamily: 'Overpass, sans-serif' }}>
-        <Stepper.Step label="Primer paso" description="Elegir supermercado" />
-        <Stepper.Step label="Segundo paso" description="Elegir categoria" />
-        <Stepper.Step label="Tercer paso" description="Agregar productos" />
-        <Stepper.Step label="Cuarto paso" description="Confirmar compra" />
-        <Stepper.Completed />
-      </Stepper>
-
-      <Divider my="sm" />
-
-      <MultiSelect
-        data={propiedades}
-        label="Porfavor elija los productos que desea agregar"
-        placeholder="Elije tus productos"
-        clearButtonLabel="Limpiar"
-        clearable
-        maxDropdownHeight={160}
-        onChange={setProductosElegidos}
-      />
-
-      <div style={{ width: '100%' }} className="seccion_cartas">
-        {
-                    productosElegidos.map((elemento) => {
-                      for (let i = 0; i < propiedades.length; i++) {
-                        if (elemento === propiedades[i].value) {
-                          return (
-                            <Card
-                              key={propiedades[i].value}
-                              shadow="sm"
-                              p="lg"
-                              style={{
-                                marginTop: '15px', maxWidth: '260px', minWidth: '260px', maxHeight: '300px',
-                              }}
-                            >
-                              <Card.Section>
-                                <Image src={propiedades[i].src} height={160} alt="Norway" />
-                              </Card.Section>
-
-                              <Group position="apart" style={{ marginBottom: 5, marginTop: '10px' }}>
-                                <Text weight={500}>{propiedades[i].label}</Text>
-                                <Badge color="green" variant="light">
-                                  {`Q ${propiedades[i].precio}`}
-                                </Badge>
-
-                              </Group>
-                              <Slider
-                                style={{ marginTop: '35px', marginBottom: '25px' }}
-                                color="orange"
-                                labelAlwaysOn
-                                onChange={actualizarContadores(i)}
-                                max={propiedades[i].unidades}
-                              />
-                            </Card>
-                          )
+                                        </Group>
+                                        {/* <Badge style={{ marginTop: '25px' }} color="orange" variant="light">
+                                            {"En disponibilidad: " + propiedades[i].unidades + " unidades"}
+                                        </Badge> */}
+                                        {/* <Button variant="light" color="blue" fullWidth style={{ marginTop: 14 }}>
+                                            Book classic tour now
+                                        </Button> */}
+                                        <Slider style={{ marginTop: '35px', marginBottom: '25px' }}
+                                            color="orange"
+                                            labelAlwaysOn
+                                            onChange={actualizarContadores(i)}
+                                            max={propiedades[i].unidades}
+                                        />
+                                    </Card>
+                                )
+                            }
                         }
                       }
                     })
