@@ -5,7 +5,7 @@ import {
 import { CurrencyDollar, CirclePlus } from 'tabler-icons-react'
 
 import { showNotification } from '@mantine/notifications'
-import {multiplicacion, total} from '../../../utils/metodos'
+import {multiplicacion, total, aplicarCupon} from '../../../utils/metodosAritmeticos'
 import loc1 from './locations/loc1.png'
 
 import imgcupon from './locations/imagencupon.svg'
@@ -30,13 +30,14 @@ function Checkout({ items, setActiveTab }) {
   })
 
   useEffect(() => {
-    let total = 0.0
+    let totalloc = 0.0
     for (let i = 0; i < items.length; i++) {
       // console.log(items[i].articulosllevar * items[i].precio)
-      total += (items[i].articulosllevar * items[i].precio)
-      // total += multiplicacion(items[i].articulosllevar, items[i].precio)
+      // total += (items[i].articulosllevar * items[i].precio)
+      let totaltemp = totalloc
+      totalloc = total(totaltemp , multiplicacion(items[i].articulosllevar, items[i].precio))
     }
-    settotalCompra(total.toFixed(2))
+    settotalCompra(totalloc.toFixed(2))
   }, [items])
 
   return (
@@ -64,7 +65,7 @@ function Checkout({ items, setActiveTab }) {
           <Button
             color="yellow"
             onClick={() => {
-              settotalCompra((prev) => prev * 0.95)
+              settotalCompra((prev) => aplicarCupon(prev, 1.05))
               setabrirModalCupon(false)
               showNotification({
                 title: 'Cupon aceptado',
