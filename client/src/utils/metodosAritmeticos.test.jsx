@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import {
-  total, multiplicacion, aplicarCupon, menosTotal, modulo, potencia, factorial, 
+  total, multiplicacion, aplicarCupon, menosTotal, modulo, potencia, factorial, raiz, logaritmo, seno, coseno, tangente,
 } from './metodosAritmeticos'
 
 describe('pruebas unitarias para funciones de pago', () => {
@@ -30,5 +30,25 @@ describe('pruebas unitarias para funciones de pago', () => {
   it('retorna el factorial', () => {
     expect(factorial(5)).toBe(120)
     expect(factorial('5')).toBe(120)
+  })
+  it('retorna la raiz cuadrada', () => {
+    expect(raiz(25)).toBe(5)
+    expect(raiz('25')).toBe(5)
+  })
+  it('retorna el logaritmo', () => {
+    expect(logaritmo(25)).toBe(3.2188758248682006)
+    expect(logaritmo('25')).toBe(3.2188758248682006)
+  })
+  it('retorna el seno', () => {
+    expect(seno(25)).toBe(-0.13235175009777303)
+    expect(seno('25')).toBe(-0.13235175009777303)
+  })
+  it('retorna el coseno', () => {
+    expect(coseno(25)).toBe(0.9912028118634736)
+    expect(coseno('25')).toBe(0.9912028118634736)
+  })
+  it('retorna la tangente', () => {
+    expect(tangente(25)).toBe(-0.13352640702153587)
+    expect(tangente('25')).toBe(-0.13352640702153587)
   })
 })

@@ -19,6 +19,16 @@ function factorial1(n) {
 
 const factorial = (a) => (isNaN(parseInt(a, 10)) ? 0 : factorial1(a))
 
+const raiz = (a) => (isNaN(parseInt(a, 10)) ? 0 : Math.sqrt(a))
+
+const logaritmo = (a) => (isNaN(parseInt(a, 10)) ? 0 : Math.log(a))
+
+const seno = (a) => (isNaN(parseInt(a, 10)) ? 0 : Math.sin(a))
+
+const coseno = (a) => (isNaN(parseInt(a, 10)) ? 0 : Math.cos(a))
+
+const tangente = (a) => (isNaN(parseInt(a, 10)) ? 0 : Math.tan(a))
+
 export {
-  total, multiplicacion, aplicarCupon, menosTotal, modulo, potencia, factorial,
+  total, multiplicacion, aplicarCupon, menosTotal, modulo, potencia, factorial, raiz, logaritmo, seno, coseno, tangente,
 }
