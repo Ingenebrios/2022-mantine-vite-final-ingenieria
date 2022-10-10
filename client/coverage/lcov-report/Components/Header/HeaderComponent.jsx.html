@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">25% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/8</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">14.28% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/7</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">28.57% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/7</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -195,8 +195,7 @@
 <a name='L130'></a><a href='#L130'>130</a>
 <a name='L131'></a><a href='#L131'>131</a>
 <a name='L132'></a><a href='#L132'>132</a>
-<a name='L133'></a><a href='#L133'>133</a>
-<a name='L134'></a><a href='#L134'>134</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L133'></a><a href='#L133'>133</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -226,11 +225,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -267,7 +264,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -291,7 +287,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -309,7 +304,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -319,7 +313,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -358,18 +356,18 @@ import imagenQuejas from './quejas.png'
 &nbsp;
 function HeaderComponent({ setOpened, opened, user }) {
   const [openDrawer, setOpenDrawer] = useState(false)
-&nbsp;
+/* istanbul ignore next */
   return (
     &lt;Header height={60} p="md" className="header__container"&gt;
       &lt;Drawer
         opened={openDrawer}
-        onClose={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setOpenDrawer(false)}</span>
+        onClose={() =&gt; setOpenDrawer(false)}
         title="Nueva queja"
         padding="xl"
         size="xl"
       &gt;
 &nbsp;
-        &lt;div className="area_nombre_apellido_queja"&gt;
+        &lt;div className="area_nombre_apellido_queja " &gt;
           &lt;TextInput
             className="input_nombre_queja"
             placeholder="Nombre"
@@ -399,8 +397,8 @@ function HeaderComponent({ setOpened, opened, user }) {
         &lt;Button
           color="yellow"
           className="input_nombre_queja"
-          onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >            setOpenDrawer(false)</span>
+          onClick={() =&gt; {
+            setOpenDrawer(false)
           }}
         &gt;
           Mandar queja
@@ -408,8 +406,7 @@ function HeaderComponent({ setOpened, opened, user }) {
 &nbsp;
         &lt;div style={{
           width: 340, marginLeft: 'auto', marginRight: 'auto', marginTop: '50px', marginBottom: '50px',
-        }}
-        &gt;
+        }} data-testid="div1"&gt;
           &lt;Image
             radius="md"
             src={imagenQuejas}
@@ -424,7 +421,7 @@ function HeaderComponent({ setOpened, opened, user }) {
         &lt;MediaQuery largerThan="sm" styles={{ display: 'none' }}&gt;
           &lt;Burger
             opened={opened}
-            onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setOpened(<span class="fstat-no" title="function not covered" >(o</span>) =&gt; <span class="cstat-no" title="statement not covered" >!o)</span>}</span>
+            onClick={() =&gt; setOpened((o) =&gt; !o)}
             size="sm"
             mr="xl"
           /&gt;
@@ -441,8 +438,8 @@ function HeaderComponent({ setOpened, opened, user }) {
               &lt;Menu.Item icon={&lt;Settings size={14} /&gt;}&gt;Configuracion&lt;/Menu.Item&gt;
               &lt;Menu.Item icon={&lt;MessageCircle size={14} /&gt;}&gt;Messages&lt;/Menu.Item&gt;
               &lt;Menu.Item
-                onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >								  setOpenDrawer(true)</span>
+                onClick={() =&gt; {
+								  setOpenDrawer(true)
                 }}
                 icon={&lt;UserExclamation size={14} /&gt;}
               &gt;
@@ -452,7 +449,7 @@ function HeaderComponent({ setOpened, opened, user }) {
               &lt;Divider /&gt;
 &nbsp;
               &lt;Menu.Label&gt;Cuenta&lt;/Menu.Label&gt;
-              &lt;Menu.Item color="red" icon={&lt;UserMinus size={14} /&gt;} onClick={<span class="fstat-no" title="function not covered" >()</span> =&gt; { <span class="cstat-no" title="statement not covered" >window.location.reload(false) </span>}}&gt;Cerrar sesion&lt;/Menu.Item&gt;
+              &lt;Menu.Item color="red" icon={&lt;UserMinus size={14} /&gt;} onClick={() =&gt; { window.location.reload(false) }}&gt;Cerrar sesion&lt;/Menu.Item&gt;
             &lt;/Menu&gt;
           &lt;/div&gt;
         &lt;/div&gt;
@@ -469,7 +466,7 @@ export default HeaderComponent
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-10T04:30:22.085Z
+                at 2022-10-10T19:08:59.453Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

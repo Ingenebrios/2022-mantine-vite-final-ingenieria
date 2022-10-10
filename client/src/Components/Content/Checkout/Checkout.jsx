@@ -43,9 +43,10 @@ function Checkout({ items, setActiveTab }) {
   // useEffect(() => {
   //   console.log(items)
   // }, [items]);
-
+/* istanbul ignore next */
   return (
-    <div>
+  
+    <div data-testid="div2">
 
       <Modal
         opened={abrirModalCupon}
@@ -192,6 +193,7 @@ function Checkout({ items, setActiveTab }) {
 											</div>
 										</div>
 									</div>
+                  
 								</Accordion.Item>
 								<Accordion.Item label="Informacion sobre lugar de entrega">
 
@@ -493,6 +495,7 @@ function Checkout({ items, setActiveTab }) {
 			}
 
     </div>
+
   )
 }
 

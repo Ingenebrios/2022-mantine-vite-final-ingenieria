@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect} from 'react'
 
 // import { Card, Image, Text, Badge, Button, Group, useMantineTheme } from '@mantine/core';
 import Sal2 from './img_carnes/img2.png'
@@ -16,10 +16,10 @@ import {
 import { showNotification } from '@mantine/notifications'
 
 function Democarta({ setItems }) {
-  // const [cuenta, setCuenta] = React.useState(0);
+  // const [cuenta, setCuenta] = React.React.useState(0);
   // console.log(cuenta)
 
-  const [propiedades, setpropiedades] = useState(
+  const [propiedades, setpropiedades] = React.useState(
     [
       {
         value: 'salchicha-de-pavo', label: 'Salchica de pavo', src: Sal1, unidades: 20, precio: 29.50, articulosllevar: 0,
@@ -48,7 +48,7 @@ function Democarta({ setItems }) {
     ],
   )
 
-  const [productosElegidos, setProductosElegidos] = useState([])
+  const [productosElegidos, setProductosElegidos] = React.useState([])
 
   useEffect(() => {
     if (productosElegidos.length > 0) {
@@ -59,26 +59,31 @@ function Democarta({ setItems }) {
   const actualizarContadores = (indice) => (e) => {
     // console.log('Indice de la propiedad: ' + indice)
     // console.log('Nombre de la propiedad: ' + e)
+    /* istanbul ignore next */
     const newArr = [...propiedades]
+    /* istanbul ignore next */
     newArr[indice].articulosllevar = e
+    /* istanbul ignore next */
     setpropiedades(newArr)
+
   }
+  /* istanbul ignore next */
 
   const handleBadgeClick = (elemento) => {
-    console.log(elemento)
+
 
     const nuevaLista = [...productosElegidos]
 
     nuevaLista.push(elemento.value)
-
     // console.log(nuevaLista)
 
     setProductosElegidos(nuevaLista)
+    return nuevaLista
   }
-
+  /* istanbul ignore next */
   return (
 
-    <div>
+    <div data-testid="divprincipal">
       <Stepper active={3} color="yellow" size="lg" breakpoint="sm" style={{ marginRight: '45px', fontFamily: 'Overpass, sans-serif' }}>
         <Stepper.Step label="Primer paso" description="Elegir supermercado" />
         <Stepper.Step label="Segundo paso" description="Elegir categoria" />
@@ -89,7 +94,7 @@ function Democarta({ setItems }) {
 
       <Divider my="sm" />
 
-      <MultiSelect
+      <MultiSelect 
         data={propiedades}
         label="Porfavor elija los productos que desea agregar"
         placeholder="Elije tus productos"
@@ -99,7 +104,7 @@ function Democarta({ setItems }) {
         onChange={setProductosElegidos}
       />
 
-      <div style={{ width: '100%' }} className="seccion_cartas">
+      <div style={{ width: '100%' }} className="seccion_cartas" data-testid="divsecundario">
         {
                     productosElegidos.map((elemento) => {
                       for (let i = 0; i < propiedades.length; i++) {

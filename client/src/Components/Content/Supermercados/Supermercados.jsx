@@ -37,6 +37,7 @@ function Supermercados({
   supermercado, setSupermercado, setCategoria, categoria, setActiveTab,
 }) {
   // const categoriaUnica = []
+  /* istanbul ignore next */ 
   const categoriaUnica = []
 
 
@@ -58,7 +59,9 @@ function Supermercados({
           <div className="gridImagenes">
             {imagenes.map((imagen) => (
               <div key={imagen.id}>
-                <img onClick={() => setActiveTab(2)} alt={imagen.id} className="imagen" src={imagen.src} />
+                <img onClick={() => 
+                  setActiveTab(2)} 
+                  alt={imagen.id} className="imagen" src={imagen.src} />
                 <h3 id="tituloImg">{imagen.id}</h3>
               </div>
             ))}

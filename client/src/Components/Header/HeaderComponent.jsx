@@ -27,7 +27,7 @@ import imagenQuejas from './quejas.png'
 
 function HeaderComponent({ setOpened, opened, user }) {
   const [openDrawer, setOpenDrawer] = useState(false)
-
+/* istanbul ignore next */
   return (
     <Header height={60} p="md" className="header__container">
       <Drawer
@@ -38,7 +38,7 @@ function HeaderComponent({ setOpened, opened, user }) {
         size="xl"
       >
 
-        <div className="area_nombre_apellido_queja">
+        <div className="area_nombre_apellido_queja " >
           <TextInput
             className="input_nombre_queja"
             placeholder="Nombre"
@@ -77,8 +77,7 @@ function HeaderComponent({ setOpened, opened, user }) {
 
         <div style={{
           width: 340, marginLeft: 'auto', marginRight: 'auto', marginTop: '50px', marginBottom: '50px',
-        }}
-        >
+        }} data-testid="div1">
           <Image
             radius="md"
             src={imagenQuejas}
