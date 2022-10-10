@@ -40,6 +40,10 @@ function Checkout({ items, setActiveTab }) {
     settotalCompra(totalloc.toFixed(2))
   }, [items])
 
+  // useEffect(() => {
+  //   console.log(items)
+  // }, [items]);
+
   return (
     <div>
 

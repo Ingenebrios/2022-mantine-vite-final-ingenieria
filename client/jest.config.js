@@ -5,4 +5,5 @@ module.exports = {
     '\\.svg$':'<rootDir>/__mocks__/styleMock.js',
   },
   testEnvironment: 'jsdom',
+  testPathIgnorePatterns: ["src/firebase"]
 }
