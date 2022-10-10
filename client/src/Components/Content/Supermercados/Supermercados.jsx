@@ -37,6 +37,8 @@ function Supermercados({
   supermercado, setSupermercado, setCategoria, categoria, setActiveTab,
 }) {
   // const categoriaUnica = []
+  const categoriaUnica = []
+
 
   return (
     <div className="SupermercadoContainer">
