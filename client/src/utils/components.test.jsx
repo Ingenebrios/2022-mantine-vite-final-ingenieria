@@ -6,10 +6,8 @@ import Supermercados from '../Components/Content/Supermercados/Supermercados.jsx
 import HeaderComponent from '../Components/Header/HeaderComponent.jsx'
 import Producto from '../Components/Content/Productos/Productos.jsx'
 
-
-
 import {
-    SimpleGrid,Card, Image, Text, Badge, Button, Group, Divider, Stepper,Modal
+    SimpleGrid,Card, Image, Text, Badge, Button, Group, Divider, Stepper,Modal, AppShell, Navbar, Header, Aside, Footer
   } from '@mantine/core'
 
 const setActiveTab = () =>{
@@ -79,6 +77,7 @@ it('renders',() => {
     render(<Producto categoria={categoria}/>)
 })
 
+
 it('renders',() => {
     render(<SimpleGrid/>)
 })
@@ -108,5 +107,20 @@ it('renders',() => {
 })
 it('renders',() => {
     render(<Modal/>)
+})
+it('renders',() => {
+    render(<AppShell/>)
+})
+it('renders',() => {
+    render(<Navbar/>)
+})
+it('renders',() => {
+    render(<Header/>)
+})
+it('renders',() => {
+    render(<Aside/>)
+})
+it('renders',() => {
+    render(<Footer/>)
 })
 
