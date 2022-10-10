@@ -37,13 +37,6 @@ function Supermercados({
   supermercado, setSupermercado, setCategoria, categoria, setActiveTab,
 }) {
   // const categoriaUnica = []
-  const categoriaUnica = []
-
-  categoria.map((categoria) => {
-    if (categoriaUnica.indexOf(categoria) === -1) {
-      categoriaUnica.push(categoria)
-    }
-  })
 
   return (
     <div className="SupermercadoContainer">
