@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import {
-  total, multiplicacion, aplicarCupon, menosTotal, modulo, potencia, factorial, 
+  total, multiplicacion, aplicarCupon, menosTotal, modulo, potencia, 
 } from './metodosAritmeticos'
 
 describe('pruebas unitarias para funciones de pago', () => {
@@ -26,9 +26,5 @@ describe('pruebas unitarias para funciones de pago', () => {
   it('retorna la potencia de dos numeros', () => {
     expect(potencia(5, 2)).toBe(25)
     expect(potencia('5', '2')).toBe(25)
-  })
-  it('retorna el factorial', () => {
-    expect(factorial(5)).toBe(120)
-    expect(factorial('5')).toBe(120)
   })
 })
