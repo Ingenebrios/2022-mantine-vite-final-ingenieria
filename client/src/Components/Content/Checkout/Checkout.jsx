@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import { addDoc,collection } from 'firebase/firestore'
+import { db } from '../../../config/firebase-config'
 import {
   Stepper, Divider, Text, Table, Button, Accordion, Badge, ThemeIcon, Card, Group, Image, Modal, TextInput,
 } from '@mantine/core'
@@ -29,6 +31,20 @@ function Checkout({ items, setActiveTab }) {
       )
     }
   })
+
+  const agregarCompra = async () => {
+    const referencia = collection(db, 'compras')
+    items.forEach(element => {
+      if(element.articulosllevar > 0){
+         addDoc(referencia, {
+          articulosllevar : element.articulosllevar,
+          label : element.label,
+          precio : element.precio,
+          unidades : element.unidades
+        })
+      }
+    });
+  }
 
   useEffect(() => {
     let totalloc = 0.0
@@ -289,6 +305,7 @@ function Checkout({ items, setActiveTab }) {
 								leftIcon={<CurrencyDollar size={18} />}
 								color="orange"
 								onClick={() => {
+                  agregarCompra()
 									setActiveTab(0)
 								}}
 							>
@@ -485,7 +502,7 @@ function Checkout({ items, setActiveTab }) {
       leftIcon={<CurrencyDollar size={18} />}
       color="orange"
       onClick={() => {
-								  setActiveTab(0)
+				setActiveTab(0)
       }}
     >
       Realizar compra
