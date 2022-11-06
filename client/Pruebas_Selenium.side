@@ -1,0 +1,510 @@
+{
+  "id": "2865d9b0-bd34-457e-ba67-c9e7bd4b2570",
+  "version": "2.0",
+  "name": "PEDIDOTES",
+  "url": "http://localhost:3000",
+  "tests": [{
+    "id": "966312b8-51be-4256-93aa-7badb15cabf2",
+    "name": "Prueba-Seleccion-Items",
+    "commands": [{
+      "id": "e1280376-bac1-49e4-bbbf-1a393bb761a4",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9197fc8e-eeb2-427f-a137-028659036f99",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dfab6e62-4150-4b27-a288-270903c00e5b",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(1)",
+      "targets": [
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a8be1a4-e452-425a-8dac-47429836a076",
+      "comment": "",
+      "command": "type",
+      "target": "css=input:nth-child(1)",
+      "targets": [
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pablogonzalez2716@gmail.com"
+    }, {
+      "id": "fed224dc-f1ec-40cd-b6f5-29152f6f2132",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(2)",
+      "targets": [
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@type='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1840a65c-b83e-4053-b0b8-2304cb5a7738",
+      "comment": "",
+      "command": "type",
+      "target": "css=input:nth-child(2)",
+      "targets": [
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@type='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "6a58babb-91e7-4c53-a2a5-9c94a8676db9",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e19be55-6116-4584-8048-48523ead029c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.super:nth-child(1) > .superImg",
+      "targets": [
+        ["css=.super:nth-child(1) > .superImg", "css:finder"],
+        ["xpath=//img[contains(@src,'https://raw.githubusercontent.com/Ingenebrios/2022-mantine-vite-final-ingenieria/main/client/src/Components/Content/Supermercados1/img_supermercados/la_torre1.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[2]/div/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e75c8a06-4a7b-42b0-9b8d-9a8c87d0768a",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(1) > .imagen",
+      "targets": [
+        ["css=div:nth-child(1) > .imagen", "css:finder"],
+        ["xpath=//img[@alt='Carnes y embutidos']", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[3]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "701acc63-b4e6-4e7b-8a09-cf33ecd49976",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mantine-Paper-root:nth-child(3) .mantine-h9iq4m",
+      "targets": [
+        ["css=.mantine-Paper-root:nth-child(3) .mantine-h9iq4m", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[7]/div[3]/div[2]/div[2]/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div[2]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "44d7f86b-182f-4bdd-9673-088b11f668d5",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "css=.mantine-Slider-thumb",
+      "targets": [
+        ["css=.mantine-Slider-thumb", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[4]/div/div[3]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div[3]/div/div[2]", "xpath:position"]
+      ],
+      "value": "-33.91668701171875,11.999969482421875"
+    }, {
+      "id": "749db511-12aa-403d-83ec-c2298ac3d9b0",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "css=.addedCard",
+      "targets": [
+        ["css=.addedCard", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[4]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[4]/div", "xpath:position"]
+      ],
+      "value": "59.39996337890625,238.39999389648438"
+    }, {
+      "id": "9a0b3257-654d-44e4-856b-ef06de7c8a8c",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "css=.addedCard",
+      "targets": [
+        ["css=.addedCard", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[4]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[4]/div", "xpath:position"]
+      ],
+      "value": "59.39996337890625,238.39999389648438"
+    }, {
+      "id": "f5c62768-64d4-497e-8270-bb273215ba0e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mantine-Slider-thumb",
+      "targets": [
+        ["css=.mantine-Slider-thumb", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[4]/div/div[3]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div[3]/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "731cc350-4f82-43b2-a0c4-b34dcdfd134c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mantine-Button-filled .mantine-qo1k2",
+      "targets": [
+        ["css=.mantine-Button-filled .mantine-qo1k2", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[5]/button/div/span", "xpath:idRelative"],
+        ["xpath=//div[5]/button/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Agregar a carrito')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8817952-1f2e-4347-99a3-f08d555a02b8",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.mantine-Button-filled .mantine-qo1k2",
+      "targets": [
+        ["css=.mantine-Button-filled .mantine-qo1k2", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[5]/button/div/span", "xpath:idRelative"],
+        ["xpath=//div[5]/button/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Agregar a carrito')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b44a5bb-0e97-4289-a24e-4da3e8ebc12a",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.mantine-Button-filled .mantine-qo1k2",
+      "targets": [
+        ["css=.mantine-Button-filled .mantine-qo1k2", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[5]/button/div/span", "xpath:idRelative"],
+        ["xpath=//div[5]/button/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Agregar a carrito')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "da4730c0-5ee0-4afe-bced-b57e49b41ef6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.\\__mantine-ref-tabActive .mantine-1s8spa1",
+      "targets": [
+        ["css=.\\__mantine-ref-tabActive .mantine-1s8spa1", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div/div/button[3]/div/div", "xpath:idRelative"],
+        ["xpath=//button[3]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "c5e2bf02-73b2-46d7-b3fb-6db35efb7be8",
+    "name": "Prueba-Orden",
+    "commands": [{
+      "id": "633d4b17-bbab-4b36-b083-e5548a6bbdc3",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a1e2a0ea-9a8b-4512-9903-bcab4fcfa020",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a2a7aeca-cf1c-46f3-b027-b23c9dc65f55",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(1)",
+      "targets": [
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bb905604-e305-4d4c-b342-71a594f8a131",
+      "comment": "",
+      "command": "type",
+      "target": "css=input:nth-child(1)",
+      "targets": [
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "pablogonzalez2716@gmail.com"
+    }, {
+      "id": "b7a74b4c-7c0c-40d0-8fa8-3dd40b790086",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(2)",
+      "targets": [
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@type='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7babf68-3d46-4d63-9db2-4a9169026119",
+      "comment": "",
+      "command": "type",
+      "target": "css=input:nth-child(2)",
+      "targets": [
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@type='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "66857752-10bc-4f72-bb1c-38df9c3978c9",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ef0f5cf5-fad1-4a1b-9502-580352db0b09",
+      "comment": "",
+      "command": "click",
+      "target": "css=.super:nth-child(1) > .superImg",
+      "targets": [
+        ["css=.super:nth-child(1) > .superImg", "css:finder"],
+        ["xpath=//img[contains(@src,'https://raw.githubusercontent.com/Ingenebrios/2022-mantine-vite-final-ingenieria/main/client/src/Components/Content/Supermercados1/img_supermercados/la_torre1.jpg')]", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[2]/div/img", "xpath:idRelative"],
+        ["xpath=//div[2]/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4818d296-8593-414f-a512-783a594447dd",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.mantine-Stepper-stepProgress > .\\__mantine-ref-stepIcon",
+      "targets": [
+        ["css=.mantine-Stepper-stepProgress > .\\__mantine-ref-stepIcon", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div/div/button[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/button[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "717da788-891c-49f4-9e01-01a86b7e8b47",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(1) > .imagen",
+      "targets": [
+        ["css=div:nth-child(1) > .imagen", "css:finder"],
+        ["xpath=//img[@alt='Carnes y embutidos']", "xpath:img"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[3]/div/div/div/img", "xpath:idRelative"],
+        ["xpath=//div/div/div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a1b19da2-a5b3-4438-b76c-c0e37bf8e989",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mantine-Paper-root:nth-child(1) .mantine-3fmvdk > .mantine-h9iq4m",
+      "targets": [
+        ["css=.mantine-Paper-root:nth-child(1) .mantine-3fmvdk > .mantine-h9iq4m", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[7]/div/div[2]/div[2]/span", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div[2]/div[2]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a5f8252-f0b4-4e4c-9dd8-fadfd5c247f9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mantine-d21okt",
+      "targets": [
+        ["css=.mantine-d21okt", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[4]/div/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c4fb0877-3592-4320-a78e-20c1f75fc7f4",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mantine-Button-filled .mantine-qo1k2",
+      "targets": [
+        ["css=.mantine-Button-filled .mantine-qo1k2", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[5]/button/div/span", "xpath:idRelative"],
+        ["xpath=//div[5]/button/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Agregar a carrito')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5268c55b-2946-4534-9046-298079229074",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mantine-Tabs-tabControl:nth-child(4) > .mantine-rdtd06",
+      "targets": [
+        ["css=.mantine-Tabs-tabControl:nth-child(4) > .mantine-rdtd06", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div/div/button[4]/div", "xpath:idRelative"],
+        ["xpath=//button[4]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "429c29fb-f075-4eb9-96b5-22c7efa7bfa1",
+      "comment": "",
+      "command": "click",
+      "target": "css=#mantine-2uisztxx2-0 > .mantine-hgwlez",
+      "targets": [
+        ["css=#mantine-2uisztxx2-0 > .mantine-hgwlez", "css:finder"],
+        ["xpath=//button[@id='mantine-2uisztxx2-0']/div[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div/h3/button/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d8367041-fa4b-41b3-a6d6-89922493f475",
+      "comment": "",
+      "command": "click",
+      "target": "css=#mantine-2uisztxx2-1 > .mantine-hgwlez",
+      "targets": [
+        ["css=#mantine-2uisztxx2-1 > .mantine-hgwlez", "css:finder"],
+        ["xpath=//button[@id='mantine-2uisztxx2-1']/div[2]", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/h3/button/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "60e52af6-00b1-45e8-af8c-09408d304bd1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mantine-qo1k2:nth-child(2)",
+      "targets": [
+        ["css=.mantine-qo1k2:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/main/div/div/div[2]/div/div[3]/button/div/span[2]", "xpath:idRelative"],
+        ["xpath=//button/div/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Realizar compra')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "647ae497-d8ae-43b3-aa24-dbfc510d0fae",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,16)",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "6f3482ca-8a48-453a-8960-69c4d577a9e1",
+    "name": "UsuarioNuevo",
+    "commands": [{
+      "id": "bf2965fc-8538-42bf-924c-29176d7943f1",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34b44225-2558-4506-b4b3-7b65f4daf28f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f5de964e-b993-4ac2-826a-6c0cf7b1d69c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Crear cuenta",
+      "targets": [
+        ["linkText=Crear cuenta", "linkText"],
+        ["css=a", "css:finder"],
+        ["xpath=//a[contains(text(),'Crear cuenta')]", "xpath:link"],
+        ["xpath=//div[@id='root']/div/div/div/div/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Crear cuenta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8196d312-9d0e-4c65-94bb-70d125542655",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(1)",
+      "targets": [
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1bc38118-f91b-45ab-9de6-c6b65704d5d6",
+      "comment": "",
+      "command": "type",
+      "target": "css=input:nth-child(1)",
+      "targets": [
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@type='text']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Javi1234@gmail.com"
+    }, {
+      "id": "38fb09c2-c2c8-4a61-99f5-5144136b9107",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(2)",
+      "targets": [
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@type='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ae0cfb09-ef55-43ec-afaf-7460668f3bfe",
+      "comment": "",
+      "command": "type",
+      "target": "css=input:nth-child(2)",
+      "targets": [
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=//input[@type='password']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "hola1234"
+    }, {
+      "id": "68495b56-c87c-42c4-ac8d-2044916d330c",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "0cf34b5e-53f7-4937-805f-195fe6448f27",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["966312b8-51be-4256-93aa-7badb15cabf2"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}
