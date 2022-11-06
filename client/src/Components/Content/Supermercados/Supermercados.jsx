@@ -40,7 +40,7 @@ function Supermercados({
   /* istanbul ignore next */ 
   const categoriaUnica = []
 
-
+  /* istanbul ignore next */
   return (
     <div className="SupermercadoContainer">
 

@@ -17,6 +17,7 @@ function Checkout({ items, setActiveTab }) {
 
   const [abrirModalCupon, setabrirModalCupon] = useState(false)
 
+  /* istanbul ignore next */ 
   const filasTabla = items.map((item) => {
     if (item.articulosllevar > 0) {
       return (
