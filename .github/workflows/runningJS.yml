@@ -1,4 +1,4 @@
-name: Using Node.js for running test | CI
+name: Using Node.js for running app | CI
 
 on:
   push:
@@ -18,13 +18,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js for testing on ${{ matrix.node-version }}
+    - name: Use Node.js for building on ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
       working-directory: ./client
-    - run: npm test
+    - run: npm run dev --if-present
       working-directory: ./client
-
