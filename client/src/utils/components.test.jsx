@@ -1,7 +1,7 @@
 import React from 'react'
 import {render} from '@testing-library/react'
 import  Carnes from '../Components/Content/Productos/carnes.jsx'
-import Checkout from '../Components/Content/Checkout/Checkout.jsx'
+// import Checkout from '../Components/Content/Checkout/Checkout.jsx'
 import Supermercados from '../Components/Content/Supermercados/Supermercados.jsx'
 import HeaderComponent from '../Components/Header/HeaderComponent.jsx'
 import Producto from '../Components/Content/Productos/Productos.jsx'
@@ -34,35 +34,10 @@ describe("Carnes Component", () =>{
     })
     
 })
-describe("Checkout Component", () =>{
-
-    it('renders',() => {
-        const items = [{
-            value:'salchicha-de-pavo',
-            label:"salchicha de pavo",
-            articulosllevar:3,
-            precio:2.12
-        }]
-        const {getByTestId} = render(<Checkout items={items} />)
-        const div1 = getByTestId("div2")
-        expect(div1).toBeTruthy()
-    })
-    
-})
 
 it('renders',() => {
     render(<Supermercados setActiveTab={setActiveTab}/>)
 })
-it('renders',() => {
-    const items = [{
-        value:'salchicha-de-pavo',
-        label:"salchicha de pavo",
-        articulosllevar:3,
-        precio:2.12
-    }]
-    render(<Checkout items={items} setActiveTab={setActiveTab} />)
-})
-
 
 
 it('renders',() => {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+/* istanbul ignore next */
 import { addDoc,collection } from 'firebase/firestore'
 import { db } from '../../../config/firebase-config'
 import {
