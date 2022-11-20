@@ -34,7 +34,7 @@ function Supermercados1({ setActiveTab }) {
       <div className="gridSuperes">
         {supermercados.map((supermercado) => (
           <div className="super">
-            <img src={supermercado.url} alt={supermercado.nombre} className="superImg" onClick={() => { setActiveTab(1); console.log('first') }} />
+            <img src={supermercado.url} alt={supermercado.nombre}className="superImg" onClick={() => { setActiveTab(1); console.log('first') }} />
           </div>
         ))}
       </div>
