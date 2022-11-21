@@ -11,7 +11,7 @@ describe("Add todo test",function(){
     //It blcok
     it("Succesful add to aplication",async function(){
         let driver = await new Builder().forBrowser('chrome').build();
-        await driver.get('http://localhost:3000/')
+        await driver.get('http://20.172.145.87/')
 
         await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[1]')).sendKeys('pablogonzalez2716@gmail.com')
         await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[2]')).sendKeys('1234')
@@ -33,7 +33,7 @@ describe("Add todo test",function(){
         let driver = await new Builder().forBrowser('chrome').build();
 
         
-        await driver.get('http://localhost:3000/')
+        await driver.get('http://20.172.145.87/')
 
         await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/p/a')).click()
 
@@ -63,14 +63,14 @@ async function testSeleccion(){
     
 
     //Navigate app
-    await driver.get('http://localhost:3000/')
+    await driver.get('http://20.172.145.87/')
 
 
     await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[1]')).sendKeys('pablogonzalez2716@gmail.com')
     await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[2]')).sendKeys('1234')
     await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/button')).click()
 
-    await driver.get('http://localhost:3000/')
+    await driver.get('http://localhost:3000')
     await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/main/div/div/div[2]/div/div[2]/div[1]/img')).click()
 
     await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/main/div/div/div[2]/div/div[3]/div/div/div[1]/img')).click()
@@ -93,7 +93,7 @@ async function realizarCompra(){
     
 
     //Navigate app
-    await driver.get('http://localhost:3000/')
+    await driver.get('http://20.172.145.87/')
 
 
     await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[1]')).sendKeys('pablogonzalez2716@gmail.com')
