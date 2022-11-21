@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "test2": "jest --verbose ./tests"
+  },
   "dependencies": {
+    "jest": "^29.3.1",
     "selenium-webdriver": "^4.6.1"
   }
 }
