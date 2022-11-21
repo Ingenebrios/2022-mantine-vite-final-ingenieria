@@ -2,60 +2,60 @@ const { act } = require('react-dom/test-utils');
 const {Builder,By,Actions} = require('selenium-webdriver')
 const chrome = require('selenium-webdriver/chrome');
 const chromedriver = require('chromedriver')
-const assert = require('assert')
+const assert = require('assert');
+const { isTypedArray } = require('util/types');
 
-async function testLogin(){
 
-    //Launcg the browser
-    let driver = await new Builder().forBrowser('chrome').build();
+describe("Add todo test",function(){
 
-    //Navigate app
-    await driver.get('http://localhost:3000/')
+    //It blcok
+    it("Succesful add to aplication",async function(){
+        let driver = await new Builder().forBrowser('chrome').build();
+        await driver.get('http://localhost:3000/')
 
-    await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[1]')).sendKeys('pablogonzalez2716@gmail.com')
-    await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[2]')).sendKeys('1234')
-    await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/button')).click()
-    let textvalue = await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/button')).getText().then(function(value){
-        return value
+        await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[1]')).sendKeys('pablogonzalez2716@gmail.com')
+        await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[2]')).sendKeys('1234')
+        await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/button')).click()
+        let textvalue = await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/button')).getText().then(function(value){
+            return value
+        })
+        assert.strictEqual(textvalue,'INICIAR')
+
+
+        //Close browser
+        setInterval( function (){
+            driver.quit()
+            driver.close()
+        },4000)   
+
     })
-    assert.strictEqual(textvalue,'INICIAR')
+    it("Succesful add to aplication new account",async function(){
+        let driver = await new Builder().forBrowser('chrome').build();
 
+        
+        await driver.get('http://localhost:3000/')
 
-    //Close browser
-    setInterval( function (){
-        driver.quit()
-        driver.close()
-    },4000)
+        await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/p/a')).click()
 
-    
+        await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[1]')).sendKeys('pablogonzalez2716@gmail.com')
+        await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[2]')).sendKeys('1234')
+        await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/button')).click()
 
-}
-async function testNewAccount(){
+        let textvalue = await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/button')).getText().then(function(value){
+            return value
+        })
+        assert.strictEqual(textvalue,'CREAR')
 
-    //Launcg the browser
-    let driver = await new Builder().forBrowser('chrome').build();
+        setInterval( function (){
+            driver.quit()
+            driver.close()
+        },4000)
 
-    //Navigate app
-    await driver.get('http://localhost:3000/')
-
-    await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/p/a')).click()
-
-    await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[1]')).sendKeys('pablogonzalez2716@gmail.com')
-    await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[2]')).sendKeys('1234')
-    await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/button')).click()
-
-    let textvalue = await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/button')).getText().then(function(value){
-        return value
     })
-    assert.strictEqual(textvalue,'CREAR')
 
 
-    setInterval( function (){
-        driver.quit()
-        driver.close()
-    },4000)
+})
 
-}
 async function testSeleccion(){
 
     //Launcg the browser
@@ -113,9 +113,4 @@ async function realizarCompra(){
         driver.quit()
         driver.close()
     },4000)
-
 }
-testLogin()
-// testNewAccount()
-//testSeleccion()
-//testSeleccion()
