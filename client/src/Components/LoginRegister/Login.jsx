@@ -73,7 +73,7 @@ function Login({ setUsuarioLoggeado, setcorreoUsuarioLoggeado }) {
   <div className="form">
     <img src={imgLogin} alt="" className="img_registro" />
     <div className="login-form">
-      <input type="text" placeholder="correo" onChange={(e) => { setUsuario(e.target.value) }} />
+      <input type="text" placeholder="correo nuevo" onChange={(e) => { setUsuario(e.target.value) }} />
       <input type="password" placeholder="clave" onChange={(e) => { setClave(e.target.value) }} />
       <button onClick={() => loggear()}>Iniciar</button>
       <p className="message">
