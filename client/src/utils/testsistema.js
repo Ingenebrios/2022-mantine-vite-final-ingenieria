@@ -116,6 +116,6 @@ async function realizarCompra(){
 
 }
 testLogin()
-testNewAccount()
+// testNewAccount()
 //testSeleccion()
 //testSeleccion()
