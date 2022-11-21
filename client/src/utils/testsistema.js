@@ -2,6 +2,7 @@ const { act } = require('react-dom/test-utils');
 const {Builder,By,Actions} = require('selenium-webdriver')
 const chrome = require('selenium-webdriver/chrome');
 const chromedriver = require('chromedriver')
+const assert = require('assert')
 
 async function testLogin(){
 
@@ -14,12 +15,19 @@ async function testLogin(){
     await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[1]')).sendKeys('pablogonzalez2716@gmail.com')
     await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[2]')).sendKeys('1234')
     await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/button')).click()
+    let textvalue = await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/button')).getText().then(function(value){
+        return value
+    })
+    assert.strictEqual(textvalue,'INICIAR')
 
 
+    //Close browser
     setInterval( function (){
         driver.quit()
         driver.close()
     },4000)
+
+    
 
 }
 async function testNewAccount(){
@@ -32,10 +40,14 @@ async function testNewAccount(){
 
     await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/p/a')).click()
 
-    await driver.get('http://localhost:3000/#')
     await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[1]')).sendKeys('pablogonzalez2716@gmail.com')
     await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/input[2]')).sendKeys('1234')
     await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/button')).click()
+
+    let textvalue = await driver.findElement(By.xpath('//*[@id="root"]/div/div/div/div/button')).getText().then(function(value){
+        return value
+    })
+    assert.strictEqual(textvalue,'CREAR')
 
 
     setInterval( function (){

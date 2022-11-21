@@ -1,4 +1,6 @@
 /* eslint-disable no-undef */
+
+
 import {
   total, multiplicacion, aplicarCupon, menosTotal, modulo, potencia, 
 } from './metodosAritmeticos'
