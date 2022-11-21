@@ -1,4 +1,4 @@
-name: Using Node.js for running test | CI
+name: Using Node.js for running arithmetic test | CI
 
 on:
   push:
