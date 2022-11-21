@@ -63,7 +63,7 @@ function Login({ setUsuarioLoggeado, setcorreoUsuarioLoggeado }) {
             setLoginPage(false)
           }}
         >
-          Iniciar
+          Comenzar
         </a>
       </p>
     </div>
