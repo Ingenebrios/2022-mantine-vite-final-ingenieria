@@ -52,7 +52,7 @@ function Login({ setUsuarioLoggeado, setcorreoUsuarioLoggeado }) {
   <div className="form">
     <img src={imgRegistro} alt="" className="img_registro" />
     <div className="register-form">
-      <input type="text" placeholder="correo" onChange={(e) => { setNuevoUsuario(e.target.value) }} />
+      <input type="text" placeholder="nombre de usuario" onChange={(e) => { setNuevoUsuario(e.target.value) }} />
       <input type="password" placeholder="clave" onChange={(e) => { setNuevaClave(e.target.value) }} />
       <button onClick={() => { registrar() }}>Crear</button>
       <p className="message">
